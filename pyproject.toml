@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "projectone"
+version = "0.1.0"
+description = ""
+authors = ["Andre de Paula"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.112.2"
+uvicorn = "^0.30.6"
+requests = "^2.32.3"
+pydantic-settings = "^2.4.0"
+autopep8 = "^2.3.1"
+psycopg2-binary = "^2.9.9"
+asyncpg = "^0.29.0"
+passlib = "^1.7.4"
+pytz = "^2024.1"
+python-jose = "^3.3.0"
+sqlalchemy = "^2.0.34"
+pytest = "^8.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
