@@ -1,7 +1,9 @@
-from passlib.context import CryptContext
+from pwdlib import PasswordHash
+
+pwd_context = PasswordHash.recommended()
 
 
-CRIPTO = CryptContext(schemes=['bcrypt'], deprecated='auto')
+
 
 def verificar_senha(senha: str, hash_senha: str) -> bool:
     """
@@ -9,7 +11,7 @@ def verificar_senha(senha: str, hash_senha: str) -> bool:
         a senha em texto puro, informado pelo usuario
     """
 
-    return CRIPTO.verify(senha, hash_senha)
+    return pwd_context.verify(senha, hash_senha)
 
 
 
@@ -17,4 +19,5 @@ def gerar_hash(senha: str) -> str:
     """
         Função que retorna o hash da senha
     """
-    return CRIPTO.hash(senha)
+    return pwd_context.hash(senha)
+

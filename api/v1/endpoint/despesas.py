@@ -32,6 +32,37 @@ async def get_despesa(id_despesa: int, db: AsyncSession = Depends(get_sessison))
         else:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                                 detail='Não existe uma despesa com esse ID')
+        
+
+@router.get('/despesas', response_model=List[DespesasSchemasGet], tags=['Despesas'], status_code=status.HTTP_200_OK)
+async def get_despesa_descricao(descricao: str, db: AsyncSession = Depends(get_sessison)):
+    async with db as session:
+        query = select(DespesasModel).filter(DespesasModel.descricao.like(descricao))
+        result = await session.execute(query)
+        despesas: List = result.scalars().all()
+
+        if despesas:
+            return despesas
+        else:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                                detail='Não existe uma despesa com essa descricao')
+        
+
+@router.get('/despesas/{ano}/{mes}', tags=['Despesas'])
+async def get_despesas(ano, mes, db: AsyncSession = Depends(get_sessison)):
+    data_inicio = datetime.strptime(f'{ano}-{mes}-01', '%Y-%m-%d').date()
+    data_fim = datetime.strptime(f'{ano}-{mes}-30', '%Y-%m-%d').date()
+    async with db as session:
+        query = select(DespesasModel).filter(DespesasModel.data.between(data_inicio, data_fim))
+        result = await session.execute(query)
+        despesa: List = result.scalars().all()
+
+    if despesa:
+        return despesa
+    else:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail='Não existe uma despesas neste periodo')
+
 
 
 @router.post('/despesas/', response_model=DespesasSchemas, tags=['Despesas'], status_code=status.HTTP_201_CREATED)
@@ -51,17 +82,16 @@ async def put_despesa(id_despesa: int, despesas: DespesasSchemas, db=Depends(get
         query = select(DespesasModel).where(DespesasModel.id == id_despesa)
         result = await session.execute(query)
         despesa_put = result.scalars().one_or_none()
-        print(despesa_put)
 
         if despesa_put:
             query = update(DespesasModel).values(
-                descricao=despesas.descricao, 
-                valor=despesas.valor, 
-                data=despesas.data, 
+                descricao=despesas.descricao,
+                valor=despesas.valor,
+                data=despesas.data,
                 categoria=despesas.categoria
-                ).where(
-                DespesasModel.id == id_despesa 
-                )
+            ).where(
+                DespesasModel.id == id_despesa
+            )
             await session.execute(query)
             await session.commit()
 
@@ -82,7 +112,7 @@ async def delete_despesa(id_despesa: int, db=Depends(get_sessison)):
             query = delete(DespesasModel).where(DespesasModel.id == id_despesa)
             await session.execute(query)
             await session.commit()
-        
+
         else:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                                 detail='Não existe uma despesa com esse ID')
