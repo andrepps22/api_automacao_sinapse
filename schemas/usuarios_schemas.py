@@ -3,7 +3,13 @@ from typing import Optional
 
 
 class UsuarioSchemas(BaseModel):
-    id: Optional[int]
-    nome: str
+    username: str
     email: str
-    hash: str
+
+
+class UsuarioIdSchemas(UsuarioSchemas):
+    id: Optional[int]
+
+
+class UsuarioSenhaSchemas(UsuarioSchemas):
+    senha: str
