@@ -1,17 +1,32 @@
-from sqlalchemy import select, insert, delete, update
-from sqlalchemy.ext.asyncio import AsyncSession
-from core.security import gerar_hash
-from core.deps import get_sessison
-from fastapi import APIRouter, Depends, HTTPException, status
-from schemas.usuarios_schemas import UsuarioSchemas, UsuarioSenhaSchemas
-from models.usuarios_model import UsuarioModel
+from typing import List
 
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy import delete, insert, select, update
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from core.deps import get_session
+from core.security import gerar_hash
+from models.usuarios_model import UsuarioModel
+from schemas.usuarios_schemas import (UsuarioGetSchemas, UsuarioSchemas,
+                                      UsuarioSenhaSchemas)
 
 router = APIRouter()
 
 
-@router.post('/usuarios/', status_code=status.HTTP_201_CREATED, response_model=UsuarioSchemas, tags=['Usuario'])
-async def post_usuario(usuario: UsuarioSenhaSchemas, db: AsyncSession = Depends(get_sessison)):
+@router.get('/usuarios/', response_model=List[UsuarioGetSchemas], status_code=status.HTTP_200_OK, tags=['Usuarios'])
+async def get_usuarios(db: AsyncSession = Depends(get_session)):
+    async with db as session:
+        query = select(UsuarioModel)
+        result = await session.execute(query)
+        user: List = result.scalars().all()
+        return user
+        
+
+
+
+
+@router.post('/usuarios/', status_code=status.HTTP_201_CREATED, response_model=UsuarioSchemas, tags=['Usuarios'])
+async def post_usuario(usuario: UsuarioSenhaSchemas, db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(UsuarioModel).where(UsuarioModel.username == usuario.username or UsuarioModel.email == usuario.email)
         result = await session.execute(query)

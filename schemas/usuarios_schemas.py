@@ -1,5 +1,7 @@
-from pydantic import BaseModel
+from datetime import datetime
 from typing import Optional
+
+from pydantic import BaseModel
 
 
 class UsuarioSchemas(BaseModel):
@@ -7,9 +9,9 @@ class UsuarioSchemas(BaseModel):
     email: str
 
 
-class UsuarioIdSchemas(UsuarioSchemas):
-    id: Optional[int]
-
-
 class UsuarioSenhaSchemas(UsuarioSchemas):
     senha: str
+
+class UsuarioGetSchemas(UsuarioSchemas):
+    id: Optional[int]
+    criado_em: datetime

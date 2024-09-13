@@ -1,18 +1,20 @@
-from fastapi import APIRouter, Depends
-from typing import List, Dict
-from core.deps import get_sessison
-from sqlalchemy import select, func
-from sqlalchemy.ext.asyncio import AsyncSession
-from models.receitas_model import ReceitasModel
-from models.despesas_model import DespesasModel
-from schemas.resumo_schemas import ResumoSchema
 from datetime import datetime
+from typing import Dict, List
+
+from fastapi import APIRouter, Depends
+from sqlalchemy import func, select
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from core.deps import get_session
+from models.despesas_model import DespesasModel
+from models.receitas_model import ReceitasModel
+from schemas.resumo_schemas import ResumoSchema
 
 router = APIRouter()
 
 
 @router.get('/resumos/{ano}/{mes}', response_model=ResumoSchema, tags=['Resumo'])
-async def get_resumos(ano, mes, db: AsyncSession = Depends(get_sessison)):
+async def get_resumos(ano, mes, db: AsyncSession = Depends(get_session)):
     data_inicio = datetime.strptime(f'{ano}-{mes}-01', '%Y-%m-%d').date()
     data_fim = datetime.strptime(f'{ano}-{mes}-30', '%Y-%m-%d').date()
     despesas_total_mes = 0

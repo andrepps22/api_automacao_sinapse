@@ -1,8 +1,9 @@
-from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import func
-from core.config import setting
 from datetime import datetime
 
+from sqlalchemy import func
+from sqlalchemy.orm import Mapped, mapped_column
+
+from core.config import setting
 
 reg = setting.DBModelReg
 

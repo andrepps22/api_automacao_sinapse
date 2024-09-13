@@ -1,10 +1,7 @@
-from pydantic import BaseModel
-from typing import Optional
 from datetime import date
 from typing import Literal, Optional
 
-
-
+from pydantic import BaseModel
 
 
 class DespesasSchemas(BaseModel):
