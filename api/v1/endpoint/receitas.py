@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import delete, insert, select, update
@@ -9,11 +9,12 @@ from core.security import pegar_usuario_corrente
 from models.receitas_model import ReceitasModel
 from schemas.receitas_schemas import ReceitasSchemas, ReceitasSchemasGet
 
-router = APIRouter()
+router = APIRouter(prefix='/receitas', tags=['Receitas'])
 
+T_Session = Annotated[AsyncSession, Depends(get_session)]
 
-@router.get('/receitas/', response_model=List[ReceitasSchemasGet], status_code=status.HTTP_200_OK, tags=['Receitas'])
-async def get_despesas(db: AsyncSession = Depends(get_session)):
+@router.get('/', response_model=List[ReceitasSchemasGet], status_code=status.HTTP_200_OK)
+async def get_despesas(db: T_Session):
     async with db as session:
         query = select(ReceitasModel)
         result = await session.execute(query)
@@ -21,8 +22,8 @@ async def get_despesas(db: AsyncSession = Depends(get_session)):
         return receitas
 
 
-@router.get('/receitas/{id_receita}', response_model=ReceitasSchemasGet, status_code=status.HTTP_200_OK, tags=['Receitas'])
-async def get_despesa(id_receita: int, db: AsyncSession = Depends(get_session)):
+@router.get('/{id_receita}', response_model=ReceitasSchemasGet, status_code=status.HTTP_200_OK)
+async def get_despesa(id_receita: int, db: T_Session):
     async with db as session:
         query = select(ReceitasModel).where(ReceitasModel.id == id_receita)
         result = await session.execute(query)
@@ -34,8 +35,8 @@ async def get_despesa(id_receita: int, db: AsyncSession = Depends(get_session)):
                                 detail='Não existe uma despesa com esse ID')
 
 
-@router.get('/receitas',response_model=List[ReceitasSchemasGet], status_code=status.HTTP_200_OK, tags=['Receitas'])
-async def get_receitas_descricao(descricao:str, db:AsyncSession = Depends(get_session)):
+@router.get('',response_model=List[ReceitasSchemasGet], status_code=status.HTTP_200_OK)
+async def get_receitas_descricao(descricao:str, db: T_Session):
     async with db as session:
         query = select(ReceitasModel).filter(ReceitasModel.descricao.like(descricao))
         result = await session.execute(query)
@@ -47,8 +48,8 @@ async def get_receitas_descricao(descricao:str, db:AsyncSession = Depends(get_se
                                 detail='Não existe uma despesa com essa descricao')
 
 
-@router.post('/receitas/', response_model=ReceitasSchemas, status_code=status.HTTP_201_CREATED, tags=['Receitas'])
-async def post_receita(receita: ReceitasSchemas, db: AsyncSession = Depends(get_session), usuario_corrente = Depends(pegar_usuario_corrente)):
+@router.post('/', response_model=ReceitasSchemas, status_code=status.HTTP_201_CREATED)
+async def post_receita(receita: ReceitasSchemas, db: T_Session, usuario_corrente = Depends(pegar_usuario_corrente)):
     async with db as session:
         query = insert(ReceitasModel).values(
             descricao=receita.descricao,
@@ -61,8 +62,8 @@ async def post_receita(receita: ReceitasSchemas, db: AsyncSession = Depends(get_
         return receita
 
 
-@router.put('/receitas/{id_receita}', response_model=ReceitasSchemas, status_code=status.HTTP_202_ACCEPTED, tags=['Receitas'])
-async def put_receita(id_receita: int, receita: ReceitasSchemas, db: AsyncSession = Depends(get_session), usuario_corrente = Depends(pegar_usuario_corrente)):
+@router.put('/{id_receita}', response_model=ReceitasSchemas, status_code=status.HTTP_202_ACCEPTED)
+async def put_receita(id_receita: int, receita: ReceitasSchemas, db: T_Session, usuario_corrente = Depends(pegar_usuario_corrente)):
     async with db as session:
         query = select(ReceitasModel).where(ReceitasModel.id == id_receita)
         result = await session.execute(query)
@@ -82,8 +83,8 @@ async def put_receita(id_receita: int, receita: ReceitasSchemas, db: AsyncSessio
                                 detail='Não existe uma despesa com esse ID')
 
 
-@router.delete('/receitas/{id_receita}', status_code=status.HTTP_204_NO_CONTENT, tags=['Receitas'])
-async def delete_receita(id_receita: int, db: AsyncSession = Depends(get_session), usuario_corrente = Depends(pegar_usuario_corrente)):
+@router.delete('/{id_receita}', status_code=status.HTTP_204_NO_CONTENT)
+async def delete_receita(id_receita: int, db: T_Session, usuario_corrente = Depends(pegar_usuario_corrente)):
     async with db as session:
         query = select(ReceitasModel).where(ReceitasModel.id == id_receita)
         result = await session.execute(query)

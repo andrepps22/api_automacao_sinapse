@@ -12,6 +12,6 @@ class UsuarioSchemas(BaseModel):
 class UsuarioSenhaSchemas(UsuarioSchemas):
     senha: str
 
-class UsuarioGetSchemas(UsuarioSchemas):
+class UsuarioPublicoSchemas(UsuarioSchemas):
     id: Optional[int]
     criado_em: datetime

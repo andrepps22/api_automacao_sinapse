@@ -13,7 +13,7 @@ from core.deps import get_session
 from models.usuarios_model import UsuarioModel
 
 pwd_context = PasswordHash.recommended()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f'{setting.API_VERSION}/token')
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f'{setting.API_VERSION}/auth/token')
 
 
 def verificar_senha(senha: str, hash_senha: str) -> bool:
@@ -39,6 +39,7 @@ def criar_token(dados: dict):
 
     encode_jwt = encode(to_encode, setting.JWT_SECRET, algorithm=setting.ALGORITHM)
     return encode_jwt 
+
 
 async def pegar_usuario_corrente(
         db: AsyncSession = Depends(get_session),

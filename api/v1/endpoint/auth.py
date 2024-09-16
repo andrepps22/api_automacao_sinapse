@@ -8,10 +8,10 @@ from core.security import criar_token, verificar_senha
 from models.usuarios_model import UsuarioModel
 from schemas.token_schemas import TokenSchemas
 
-router = APIRouter()
+router = APIRouter(prefix='/auth/token', tags=['Auth'])
 
 
-@router.post('/token', response_model=TokenSchemas, tags=['Token'])
+@router.post('', response_model=TokenSchemas)
 async def login_para_acess_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: AsyncSession = Depends(get_session)):
