@@ -3,7 +3,8 @@ from zoneinfo import ZoneInfo
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from jwt import DecodeError, decode, encode
+from jwt import decode, encode
+from jwt.exceptions import PyJWTError, ExpiredSignatureError
 from pwdlib import PasswordHash
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -47,7 +48,7 @@ async def pegar_usuario_corrente(
 ):
     
     credentials_exception = HTTPException(  
-        status_code=status.HTTP_401_UNAUTHORIZED,
+        status_code=status.HTTP_403_FORBIDDEN,
         detail='Não foi possivel validar as credenciais',
         headers={'WWW-Authenticate': 'Bearer'},
     )
@@ -62,5 +63,9 @@ async def pegar_usuario_corrente(
         try:
             if not user:
                 raise credentials_exception
-        except DecodeError:
+        except ExpiredSignatureError:
+            raise HTTPException(  
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail='Token invalido')
+        except PyJWTError:
             raise credentials_exception
