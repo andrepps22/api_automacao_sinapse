@@ -1,4 +1,10 @@
 from pydantic import BaseModel
+from typing import List
+
+
+class ImovelImagenSchema(BaseModel):
+    nome: str
+    link: str
 
 
 class ImovelSchema(BaseModel):
@@ -7,7 +13,7 @@ class ImovelSchema(BaseModel):
     numero: str
     referencia: str
     descricao: str
-    imagens: str
+    imagens: List[ImovelImagenSchema]
     observacoes: str
     id_propietario: str
     cep: int

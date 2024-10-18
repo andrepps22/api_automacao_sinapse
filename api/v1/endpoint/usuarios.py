@@ -35,7 +35,7 @@ async def get_usuario(id_usuario: int, db: AsyncSession = Depends(get_session)):
                                 detail='Não foi encontrado usuário com esse ID')
 
 
-@router.post('/', status_code=status.HTTP_201_CREATED, response_model=UsuarioSchemas)
+@router.post('', status_code=status.HTTP_201_CREATED, response_model=UsuarioSchemas)
 async def post_usuario(usuario: UsuarioSenhaSchemas, db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = select(UsuarioModel).where(
@@ -86,7 +86,7 @@ async def put_usuario(id_usuario: int, usuario: UsuarioSenhaSchemas, db: AsyncSe
                 )
             query = update(UsuarioModel).values(
                 username=usuario.username, email=usuario.email, senha=usuario.senha
-            )
+            ).where(UsuarioModel.id == id_usuario)
             await session.execute(query)
             await session.commit()
 

@@ -9,3 +9,5 @@ class CorretorSchema(BaseModel):
     endereco: str
     celular: str
     data_nascimento: datetime
+    
+    
