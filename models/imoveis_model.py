@@ -1,8 +1,8 @@
 from core.config import setting
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import ForeignKey, Integer, String
+from sqlalchemy import ForeignKey, Integer, String, JSON
 import sqlalchemy as sa
-from typing import List
+from typing import List, Dict
 
 
 
@@ -14,11 +14,12 @@ class ImoveisModel:
     __tablename__= 'imovel'
     
     id_imovel: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
+    codigo_imovel: Mapped[str] = mapped_column(Integer, unique=True)
     rua: Mapped[str] = mapped_column(String)
     numero: Mapped[str] = mapped_column(String)
     referencia: Mapped[str] = mapped_column(String)
     descricao: Mapped[str] = mapped_column(String)
-    imagens: Mapped[str] = mapped_column(sa.Text)
+    imagens: Mapped[Dict] = mapped_column(JSON)
     observacoes: Mapped[str] = mapped_column(String)
     id_propietario: Mapped[int] = mapped_column(ForeignKey('proprietario.id_propietario'))
     cep: Mapped[str] = mapped_column(String)
