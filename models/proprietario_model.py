@@ -12,6 +12,6 @@ class PropietarioModel:
     
     id_propietario: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
     nome: Mapped[str] = mapped_column(String)
-    cpf: Mapped[str] = mapped_column(String)
+    cpf: Mapped[str] = mapped_column(String, unique=True)
     endereco: Mapped[str] = mapped_column(String)
     data_nascimento: Mapped[date] = mapped_column()
