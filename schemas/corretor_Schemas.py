@@ -9,4 +9,7 @@ class CorretorSchema(BaseModel):
     celular: str
     data_nascimento: datetime
     
-    
+    class Config:
+        json_encoders = {
+            datetime: lambda v: v.isoformat()
+        }

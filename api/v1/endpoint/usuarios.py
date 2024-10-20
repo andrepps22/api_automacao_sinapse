@@ -36,7 +36,7 @@ async def get_usuario(id_usuario: int, db: AsyncSession = Depends(get_session)):
 
 
 @router.post('', status_code=status.HTTP_201_CREATED, response_model=UsuarioSchemas)
-async def post_usuario(usuario: UsuarioSenhaSchemas, db: AsyncSession = Depends(get_session)):
+async def post_usuario(usuario: UsuarioSenhaSchemas, db: AsyncSession = Depends(get_session), usuario_corrente = Depends(pegar_usuario_corrente)):
     async with db as session:
         query = select(UsuarioModel).where(
             UsuarioModel.username == usuario.username or UsuarioModel.email == usuario.email

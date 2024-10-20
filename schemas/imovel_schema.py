@@ -1,10 +1,11 @@
 from pydantic import BaseModel
 from typing import List, Optional
 
-
 class ImovelImagenSchema(BaseModel):
     nome: str
     link: str
+
+
 
 
 class ImovelSchema(BaseModel):
