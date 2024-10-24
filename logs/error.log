@@ -1,0 +1,100 @@
+[2024-10-24 13:19:38 +0000] [39088] [INFO] Handling signal: term
+[2024-10-24 13:19:38 +0000] [39093] [INFO] Shutting down
+[2024-10-24 13:19:38 +0000] [39092] [INFO] Shutting down
+[2024-10-24 13:19:38 +0000] [39089] [INFO] Shutting down
+[2024-10-24 13:19:38 +0000] [39091] [INFO] Shutting down
+[2024-10-24 13:19:38 +0000] [39090] [INFO] Shutting down
+[2024-10-24 13:19:39 +0000] [39093] [INFO] Waiting for application shutdown.
+[2024-10-24 13:19:39 +0000] [39092] [INFO] Waiting for application shutdown.
+[2024-10-24 13:19:39 +0000] [39093] [INFO] Application shutdown complete.
+[2024-10-24 13:19:39 +0000] [39093] [INFO] Finished server process [39093]
+[2024-10-24 13:19:39 +0000] [39092] [INFO] Application shutdown complete.
+[2024-10-24 13:19:39 +0000] [39092] [INFO] Finished server process [39092]
+[2024-10-24 13:19:39 +0000] [39088] [ERROR] Worker (pid:39093) was sent SIGTERM!
+[2024-10-24 13:19:39 +0000] [39088] [ERROR] Worker (pid:39092) was sent SIGTERM!
+[2024-10-24 13:19:39 +0000] [39089] [INFO] Waiting for application shutdown.
+[2024-10-24 13:19:39 +0000] [39089] [INFO] Application shutdown complete.
+[2024-10-24 13:19:39 +0000] [39089] [INFO] Finished server process [39089]
+[2024-10-24 13:19:39 +0000] [39088] [ERROR] Worker (pid:39089) was sent SIGTERM!
+[2024-10-24 13:19:39 +0000] [39091] [INFO] Waiting for application shutdown.
+[2024-10-24 13:19:39 +0000] [39090] [INFO] Waiting for application shutdown.
+[2024-10-24 13:19:39 +0000] [39091] [INFO] Application shutdown complete.
+[2024-10-24 13:19:39 +0000] [39090] [INFO] Application shutdown complete.
+[2024-10-24 13:19:39 +0000] [39091] [INFO] Finished server process [39091]
+[2024-10-24 13:19:39 +0000] [39090] [INFO] Finished server process [39090]
+[2024-10-24 13:19:39 +0000] [39088] [ERROR] Worker (pid:39090) was sent SIGTERM!
+[2024-10-24 13:19:39 +0000] [39088] [ERROR] Worker (pid:39091) was sent SIGTERM!
+[2024-10-24 13:19:39 +0000] [39088] [INFO] Shutting down: Master
+[2024-10-24 13:19:39 +0000] [39201] [INFO] Starting gunicorn 23.0.0
+[2024-10-24 13:19:39 +0000] [39201] [INFO] Listening at: http://0.0.0.0:8000 (39201)
+[2024-10-24 13:19:39 +0000] [39201] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-24 13:19:39 +0000] [39204] [INFO] Booting worker with pid: 39204
+[2024-10-24 13:19:39 +0000] [39205] [INFO] Booting worker with pid: 39205
+[2024-10-24 13:19:39 +0000] [39206] [INFO] Booting worker with pid: 39206
+[2024-10-24 13:19:39 +0000] [39207] [INFO] Booting worker with pid: 39207
+[2024-10-24 13:19:39 +0000] [39208] [INFO] Booting worker with pid: 39208
+[2024-10-24 13:19:44 +0000] [39204] [INFO] Started server process [39204]
+[2024-10-24 13:19:44 +0000] [39204] [INFO] Waiting for application startup.
+[2024-10-24 13:19:44 +0000] [39204] [INFO] Application startup complete.
+[2024-10-24 13:19:44 +0000] [39205] [INFO] Started server process [39205]
+[2024-10-24 13:19:44 +0000] [39205] [INFO] Waiting for application startup.
+[2024-10-24 13:19:44 +0000] [39205] [INFO] Application startup complete.
+[2024-10-24 13:19:44 +0000] [39206] [INFO] Started server process [39206]
+[2024-10-24 13:19:44 +0000] [39206] [INFO] Waiting for application startup.
+[2024-10-24 13:19:44 +0000] [39206] [INFO] Application startup complete.
+[2024-10-24 13:19:44 +0000] [39207] [INFO] Started server process [39207]
+[2024-10-24 13:19:44 +0000] [39207] [INFO] Waiting for application startup.
+[2024-10-24 13:19:44 +0000] [39207] [INFO] Application startup complete.
+[2024-10-24 13:19:44 +0000] [39208] [INFO] Started server process [39208]
+[2024-10-24 13:19:44 +0000] [39208] [INFO] Waiting for application startup.
+[2024-10-24 13:19:44 +0000] [39208] [INFO] Application startup complete.
+[2024-10-24 13:51:12 +0000] [39201] [INFO] Handling signal: term
+[2024-10-24 13:51:12 +0000] [39205] [INFO] Shutting down
+[2024-10-24 13:51:12 +0000] [39204] [INFO] Shutting down
+[2024-10-24 13:51:12 +0000] [39207] [INFO] Shutting down
+[2024-10-24 13:51:12 +0000] [39208] [INFO] Shutting down
+[2024-10-24 13:51:12 +0000] [39206] [INFO] Shutting down
+[2024-10-24 13:51:12 +0000] [39205] [INFO] Waiting for application shutdown.
+[2024-10-24 13:51:12 +0000] [39204] [INFO] Waiting for application shutdown.
+[2024-10-24 13:51:12 +0000] [39204] [INFO] Application shutdown complete.
+[2024-10-24 13:51:12 +0000] [39207] [INFO] Waiting for application shutdown.
+[2024-10-24 13:51:12 +0000] [39204] [INFO] Finished server process [39204]
+[2024-10-24 13:51:12 +0000] [39207] [INFO] Application shutdown complete.
+[2024-10-24 13:51:12 +0000] [39207] [INFO] Finished server process [39207]
+[2024-10-24 13:51:12 +0000] [39208] [INFO] Waiting for application shutdown.
+[2024-10-24 13:51:12 +0000] [39205] [INFO] Application shutdown complete.
+[2024-10-24 13:51:12 +0000] [39208] [INFO] Application shutdown complete.
+[2024-10-24 13:51:12 +0000] [39208] [INFO] Finished server process [39208]
+[2024-10-24 13:51:12 +0000] [39205] [INFO] Finished server process [39205]
+[2024-10-24 13:51:12 +0000] [39206] [INFO] Waiting for application shutdown.
+[2024-10-24 13:51:12 +0000] [39206] [INFO] Application shutdown complete.
+[2024-10-24 13:51:12 +0000] [39206] [INFO] Finished server process [39206]
+[2024-10-24 13:51:12 +0000] [39201] [ERROR] Worker (pid:39207) was sent SIGTERM!
+[2024-10-24 13:51:12 +0000] [39201] [ERROR] Worker (pid:39205) was sent SIGTERM!
+[2024-10-24 13:51:12 +0000] [39201] [ERROR] Worker (pid:39204) was sent SIGTERM!
+[2024-10-24 13:51:12 +0000] [39201] [ERROR] Worker (pid:39206) was sent SIGTERM!
+[2024-10-24 13:51:12 +0000] [39201] [ERROR] Worker (pid:39208) was sent SIGTERM!
+[2024-10-24 13:51:12 +0000] [39201] [INFO] Shutting down: Master
+[2024-10-24 13:51:12 +0000] [39268] [INFO] Starting gunicorn 23.0.0
+[2024-10-24 13:51:12 +0000] [39268] [INFO] Listening at: http://0.0.0.0:8000 (39268)
+[2024-10-24 13:51:12 +0000] [39268] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-24 13:51:12 +0000] [39271] [INFO] Booting worker with pid: 39271
+[2024-10-24 13:51:13 +0000] [39272] [INFO] Booting worker with pid: 39272
+[2024-10-24 13:51:13 +0000] [39273] [INFO] Booting worker with pid: 39273
+[2024-10-24 13:51:13 +0000] [39274] [INFO] Booting worker with pid: 39274
+[2024-10-24 13:51:13 +0000] [39275] [INFO] Booting worker with pid: 39275
+[2024-10-24 13:51:17 +0000] [39271] [INFO] Started server process [39271]
+[2024-10-24 13:51:17 +0000] [39271] [INFO] Waiting for application startup.
+[2024-10-24 13:51:17 +0000] [39271] [INFO] Application startup complete.
+[2024-10-24 13:51:17 +0000] [39272] [INFO] Started server process [39272]
+[2024-10-24 13:51:17 +0000] [39272] [INFO] Waiting for application startup.
+[2024-10-24 13:51:17 +0000] [39272] [INFO] Application startup complete.
+[2024-10-24 13:51:17 +0000] [39273] [INFO] Started server process [39273]
+[2024-10-24 13:51:17 +0000] [39273] [INFO] Waiting for application startup.
+[2024-10-24 13:51:17 +0000] [39273] [INFO] Application startup complete.
+[2024-10-24 13:51:17 +0000] [39275] [INFO] Started server process [39275]
+[2024-10-24 13:51:17 +0000] [39275] [INFO] Waiting for application startup.
+[2024-10-24 13:51:17 +0000] [39275] [INFO] Application startup complete.
+[2024-10-24 13:51:17 +0000] [39274] [INFO] Started server process [39274]
+[2024-10-24 13:51:17 +0000] [39274] [INFO] Waiting for application startup.
+[2024-10-24 13:51:17 +0000] [39274] [INFO] Application startup complete.
