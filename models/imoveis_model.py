@@ -1,6 +1,6 @@
 from core.config import setting
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import ForeignKey, Integer, String, JSON
+from sqlalchemy import ForeignKey, Integer, String, JSON, Boolean
 from typing import Dict
 
 
@@ -12,8 +12,9 @@ reg = setting.DBModelReg
 class ImoveisModel:
     __tablename__= 'imovel'
     
-    id_imovel: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
-    codigo_imovel: Mapped[str] = mapped_column(Integer, unique=True)
+    codigo_imovel: Mapped[str] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
+    tipo_imovel: Mapped[str] = mapped_column(String)
+    condominio: Mapped[bool] = mapped_column(Boolean)
     rua: Mapped[str] = mapped_column(String)
     numero: Mapped[str] = mapped_column(String)
     referencia: Mapped[str] = mapped_column(String)
