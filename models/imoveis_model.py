@@ -1,8 +1,7 @@
 from core.config import setting
 from sqlalchemy.orm import Mapped, mapped_column
 from sqlalchemy import ForeignKey, Integer, String, JSON
-import sqlalchemy as sa
-from typing import List, Dict
+from typing import Dict
 
 
 
@@ -23,3 +22,5 @@ class ImoveisModel:
     observacoes: Mapped[str] = mapped_column(String)
     id_propietario: Mapped[int] = mapped_column(ForeignKey('proprietario.id_propietario'))
     cep: Mapped[str] = mapped_column(String)
+    
+    __table_args__ = {'extend_existing': True}
