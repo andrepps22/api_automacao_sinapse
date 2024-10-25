@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 from models.proprietario_model import PropietarioModel
 from schemas.propietario_schemas import PropietarioSchema, PropietarioIDSchema
+from core.security import pegar_usuario_corrente
 import json
 from typing import List
 from core.deps import get_session
@@ -12,7 +13,7 @@ from core.deps import get_session
 router = APIRouter()
 
 @router.post('/proprietario', status_code=status.HTTP_201_CREATED, response_model=PropietarioSchema, tags=['Proprietario'])
-async def post_proprietario(proprietario: PropietarioSchema = PropietarioSchema, db: AsyncSession = Depends(get_session)):
+async def post_proprietario(proprietario: PropietarioSchema = PropietarioSchema, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
       
         query = insert(PropietarioModel).values(
@@ -28,7 +29,7 @@ async def post_proprietario(proprietario: PropietarioSchema = PropietarioSchema,
 
 
 @router.get('/proprietario/', status_code=status.HTTP_200_OK, response_model=List[PropietarioIDSchema], tags=['Proprietario'])
-async def get_proprietario(db: AsyncSession = Depends(get_session)):
+async def get_proprietario(db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         query = select(PropietarioModel)
         result = await session.execute(query)

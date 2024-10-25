@@ -4,6 +4,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 from models.imoveis_model import ImoveisModel
 from schemas.imovel_schema import ImovelSchema
+from core.security import pegar_usuario_corrente
 import json
 from typing import List
 from core.deps import get_session
@@ -13,7 +14,7 @@ router = APIRouter()
 
 
 @router.post('/imovel', status_code=status.HTTP_201_CREATED, response_model=ImovelSchema, tags=['Imoveis'])
-async def post_imoveis(imovel: ImovelSchema = ImovelSchema, db: AsyncSession = Depends(get_session)):
+async def post_imoveis(imovel: ImovelSchema = ImovelSchema, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         imagens_json = json.dumps([imagem.dict()
                                   for imagem in imovel.imagens])
@@ -34,7 +35,7 @@ async def post_imoveis(imovel: ImovelSchema = ImovelSchema, db: AsyncSession = D
 
 
 @router.get('/imoveis/', status_code=status.HTTP_200_OK, tags=['Imoveis'])
-async def get_imoveis(db: AsyncSession = Depends(get_session)):
+async def get_imoveis(db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         query = select(ImoveisModel)
         result = await session.execute(query)

@@ -1,4 +1,5 @@
 from fastapi import APIRouter, status, Depends, HTTPException
+from core.security import pegar_usuario_corrente
 from sqlalchemy import select, insert, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
@@ -12,7 +13,7 @@ router = APIRouter()
 
 
 @router.post('/corretor', response_model=CorretorSchema, tags=['Corretor'], status_code=status.HTTP_201_CREATED)
-async def post_corretor(db: AsyncSession = Depends(get_session), corretor: CorretorSchema = CorretorSchema):
+async def post_corretor(db: AsyncSession = Depends(get_session), corretor: CorretorSchema = CorretorSchema, current_user=Depends(pegar_usuario_corrente)):
     try:
         async with db as session:
             sql = insert(CorretorModel).values(
@@ -31,7 +32,7 @@ async def post_corretor(db: AsyncSession = Depends(get_session), corretor: Corre
 
 
 @router.get('/corretor/', response_model=List[CorretorSchema], status_code=status.HTTP_200_OK, tags=['Corretor'])
-async def get_corretor(db: AsyncSession = Depends(get_session)):
+async def get_corretor(db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         sql = select(CorretorModel)
         resposta = await session.execute(sql)
@@ -41,7 +42,7 @@ async def get_corretor(db: AsyncSession = Depends(get_session)):
 
 
 @router.get('/corretor/{id_corretor}', response_model=CorretorSchema, status_code=status.HTTP_200_OK, tags=['Corretor'])
-async def get_corretor(id: int, db: AsyncSession = Depends(get_session)):
+async def get_corretor(id: int, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         sql = select(CorretorModel).where(CorretorModel.id_corretor == id)
         resposta = await session.execute(sql)

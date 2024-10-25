@@ -1,9 +1,9 @@
 from sqlalchemy import create_engine
-
+import os
 from core.config import Setting
 
-# engine = create_engine('postgresql+psycopg2://postgres:123456@localhost:5432/imobiliaria', echo=True)
-engine = create_engine('sqlite:///sqldblite.db', echo=True)
+engine = create_engine(os.getenv('DB_URL_SYNC'), echo=True)
+#engine = create_engine('sqlite:///sqldblite.db', echo=True)
 
 # Função síncrona para criar as tabelas
 def criar_tabelas():

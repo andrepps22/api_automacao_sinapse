@@ -69,3 +69,7 @@ async def pegar_usuario_corrente(
         detail='Token invalido')
         except PyJWTError:
             raise credentials_exception
+        
+        
+if __name__=='__main__':
+    print(gerar_hash('8EYT56MyNy'))

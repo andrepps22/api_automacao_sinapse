@@ -9,7 +9,7 @@ class ImovelImagenSchema(BaseModel):
 
 
 class ImovelSchema(BaseModel):
-    codigo_imovel: int
+    codigo_imovel: str
     rua: str
     numero: str
     referencia: str

@@ -6,8 +6,8 @@ max_requests_jitter = 50
 
 loglevel="info"
 
-accesslog = "/home/ubuntu/apisinapse/api_automacao_sinapse/logs/access.log"
-errorlog = "/home/ubuntu/apisinapse/api_automacao_sinapse/logs/error.log"
+accesslog = "/home/ubuntu/api_automacao_sinapse/logs/access.log"
+errorlog = "/home/ubuntu/api_automacao_sinapse/logs/error.log"
 
 bind = "0.0.0.0:8000"
 
