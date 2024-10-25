@@ -1,5 +1,5 @@
 from core.config import setting
-from sqlalchemy import Integer, String, Boolean, DateTime, ForeignKey
+from sqlalchemy import Integer, String, Boolean, DateTime, ForeignKey, func
 from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 
@@ -16,7 +16,7 @@ class LeadModel:
     etapa_lead: Mapped[str] = mapped_column(String)
     cliente_novo: Mapped[bool] = mapped_column(Boolean)
     canal_vendas: Mapped[str] = mapped_column(String)
-    create_at: Mapped[datetime] = mapped_column(DateTime)
+    create_at: Mapped[datetime] = mapped_column(init=False, server_default=func.now())
 
     
     __table_args__ = {'extend_existing': True}
