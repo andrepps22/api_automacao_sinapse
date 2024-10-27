@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
+from typing import Optional
 
 
 class CorretorSchema(BaseModel):
@@ -7,9 +8,5 @@ class CorretorSchema(BaseModel):
     cpf: str
     endereco: str
     celular: str
-    data_nascimento: datetime
     
-    class Config:
-        json_encoders = {
-            datetime: lambda v: v.isoformat()
-        }
+    

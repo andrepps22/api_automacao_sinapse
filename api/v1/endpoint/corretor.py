@@ -20,8 +20,7 @@ async def post_corretor(db: AsyncSession = Depends(get_session), corretor: Corre
                 nome=corretor.nome,
                 cpf=corretor.cpf,
                 endereco=corretor.endereco,
-                celular=corretor.celular,
-                data_nascimento=corretor.data_nascimento)
+                celular=corretor.celular)
             await session.execute(sql)
             await session.commit()
 

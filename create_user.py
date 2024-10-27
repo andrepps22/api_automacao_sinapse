@@ -43,7 +43,7 @@ if __name__ == "__main__":
 
     usuario = {
         'username': 'joao',
-        'email': 'nao@tem.com',
+        'email': 'nao@tememail.com',
         'senha': '8EYT56MyNy'
     }
 

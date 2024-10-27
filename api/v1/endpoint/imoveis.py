@@ -16,17 +16,17 @@ router = APIRouter()
 @router.post('/imovel', status_code=status.HTTP_201_CREATED, response_model=ImovelSchema, tags=['Imoveis'])
 async def post_imoveis(imovel: ImovelSchema = ImovelSchema, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
-        imagens_json = json.dumps([imagem.dict()
-                                  for imagem in imovel.imagens])
         query = insert(ImoveisModel).values(
             codigo_imovel=imovel.codigo_imovel,
+            tipo_imovel=imovel.tipo_imovel,
+            condominio = imovel.condominio,
             rua=imovel.rua,
             numero=imovel.numero,
             referencia=imovel.referencia,
             descricao=imovel.descricao,
-            imagens=imagens_json,
+            imagens=imovel.imagens,
             observacoes=imovel.observacoes,
-            id_propietario=imovel.id_propietario,
+            id_propietario=int(imovel.id_propietario),
             cep=imovel.cep)
 
         await session.execute(query)

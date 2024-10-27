@@ -1,20 +1,20 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import List, Optional
 
-class ImovelImagenSchema(BaseModel):
-    nome: str
-    link: str
+
 
 
 
 
 class ImovelSchema(BaseModel):
     codigo_imovel: str
+    tipo_imovel: str
+    condominio: bool
     rua: str
     numero: str
     referencia: str
     descricao: str
-    imagens: List[ImovelImagenSchema] = []
+    imagens: List[str]
     observacoes: str = None
     id_propietario: int
     cep: str
