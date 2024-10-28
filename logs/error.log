@@ -694,3 +694,163 @@ TypeError: 'Depends' object is not iterable
 [2024-10-25 19:25:19 +0000] [815] [INFO] Started server process [815]
 [2024-10-25 19:25:19 +0000] [815] [INFO] Waiting for application startup.
 [2024-10-25 19:25:19 +0000] [815] [INFO] Application startup complete.
+[2024-10-25 19:34:54 +0000] [534] [CRITICAL] WORKER TIMEOUT (pid:815)
+[2024-10-25 19:36:01 +0000] [534] [CRITICAL] WORKER TIMEOUT (pid:817)
+[2024-10-25 19:37:28 +0000] [534] [CRITICAL] WORKER TIMEOUT (pid:813)
+[2024-10-25 19:39:02 +0000] [534] [CRITICAL] WORKER TIMEOUT (pid:814)
+[2024-10-25 19:39:02 +0000] [534] [ERROR] Worker (pid:815) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:39:02 +0000] [534] [CRITICAL] WORKER TIMEOUT (pid:811)
+[2024-10-25 19:39:02 +0000] [534] [ERROR] Worker (pid:817) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:39:02 +0000] [2817] [INFO] Booting worker with pid: 2817
+[2024-10-25 19:39:02 +0000] [534] [ERROR] Worker (pid:813) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:39:02 +0000] [2818] [INFO] Booting worker with pid: 2818
+[2024-10-25 19:39:02 +0000] [534] [ERROR] Worker (pid:814) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:39:02 +0000] [534] [ERROR] Worker (pid:811) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:39:03 +0000] [2823] [INFO] Booting worker with pid: 2823
+[2024-10-25 19:39:03 +0000] [2822] [INFO] Booting worker with pid: 2822
+[2024-10-25 19:39:03 +0000] [2824] [INFO] Booting worker with pid: 2824
+[2024-10-25 19:39:04 +0000] [534] [INFO] Handling signal: term
+[2024-10-25 19:39:04 +0000] [534] [ERROR] Worker (pid:2822) was sent SIGTERM!
+[2024-10-25 19:39:04 +0000] [534] [ERROR] Worker (pid:2817) was sent SIGTERM!
+[2024-10-25 19:39:04 +0000] [534] [ERROR] Worker (pid:2818) was sent SIGTERM!
+[2024-10-25 19:39:04 +0000] [534] [ERROR] Worker (pid:2824) was sent SIGTERM!
+[2024-10-25 19:39:04 +0000] [534] [ERROR] Worker (pid:2823) was sent SIGTERM!
+[2024-10-25 19:39:04 +0000] [534] [INFO] Shutting down: Master
+[2024-10-25 19:39:26 +0000] [531] [INFO] Starting gunicorn 23.0.0
+[2024-10-25 19:39:26 +0000] [531] [INFO] Listening at: http://0.0.0.0:8000 (531)
+[2024-10-25 19:39:26 +0000] [531] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-25 19:39:26 +0000] [801] [INFO] Booting worker with pid: 801
+[2024-10-25 19:39:26 +0000] [804] [INFO] Booting worker with pid: 804
+[2024-10-25 19:39:26 +0000] [814] [INFO] Booting worker with pid: 814
+[2024-10-25 19:39:26 +0000] [815] [INFO] Booting worker with pid: 815
+[2024-10-25 19:39:26 +0000] [816] [INFO] Booting worker with pid: 816
+[2024-10-25 19:39:34 +0000] [804] [INFO] Started server process [804]
+[2024-10-25 19:39:34 +0000] [804] [INFO] Waiting for application startup.
+[2024-10-25 19:39:34 +0000] [804] [INFO] Application startup complete.
+[2024-10-25 19:39:34 +0000] [801] [INFO] Started server process [801]
+[2024-10-25 19:39:34 +0000] [801] [INFO] Waiting for application startup.
+[2024-10-25 19:39:34 +0000] [801] [INFO] Application startup complete.
+[2024-10-25 19:39:34 +0000] [816] [INFO] Started server process [816]
+[2024-10-25 19:39:34 +0000] [816] [INFO] Waiting for application startup.
+[2024-10-25 19:39:34 +0000] [816] [INFO] Application startup complete.
+[2024-10-25 19:39:34 +0000] [815] [INFO] Started server process [815]
+[2024-10-25 19:39:34 +0000] [815] [INFO] Waiting for application startup.
+[2024-10-25 19:39:34 +0000] [815] [INFO] Application startup complete.
+[2024-10-25 19:39:34 +0000] [814] [INFO] Started server process [814]
+[2024-10-25 19:39:34 +0000] [814] [INFO] Waiting for application startup.
+[2024-10-25 19:39:34 +0000] [814] [INFO] Application startup complete.
+[2024-10-25 19:46:05 +0000] [531] [CRITICAL] WORKER TIMEOUT (pid:804)
+[2024-10-25 19:48:01 +0000] [531] [CRITICAL] WORKER TIMEOUT (pid:814)
+[2024-10-25 19:48:01 +0000] [531] [CRITICAL] WORKER TIMEOUT (pid:815)
+[2024-10-25 19:48:02 +0000] [531] [CRITICAL] WORKER TIMEOUT (pid:816)
+[2024-10-25 19:49:14 +0000] [531] [CRITICAL] WORKER TIMEOUT (pid:801)
+[2024-10-25 19:50:19 +0000] [531] [ERROR] Worker (pid:804) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:50:19 +0000] [2393] [INFO] Booting worker with pid: 2393
+[2024-10-25 19:50:19 +0000] [531] [ERROR] Worker (pid:816) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:50:19 +0000] [531] [ERROR] Worker (pid:815) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:50:19 +0000] [2394] [INFO] Booting worker with pid: 2394
+[2024-10-25 19:50:19 +0000] [531] [ERROR] Worker (pid:814) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:50:19 +0000] [531] [ERROR] Worker (pid:801) was sent SIGKILL! Perhaps out of memory?
+[2024-10-25 19:50:20 +0000] [2399] [INFO] Booting worker with pid: 2399
+[2024-10-25 19:50:20 +0000] [2401] [INFO] Booting worker with pid: 2401
+[2024-10-25 19:50:20 +0000] [2402] [INFO] Booting worker with pid: 2402
+[2024-10-25 19:50:21 +0000] [531] [ERROR] Worker (pid:2393) was sent SIGTERM!
+[2024-10-25 19:50:21 +0000] [531] [ERROR] Worker (pid:2402) was sent SIGTERM!
+[2024-10-25 19:50:21 +0000] [2442] [INFO] Booting worker with pid: 2442
+[2024-10-25 19:50:21 +0000] [531] [ERROR] Worker (pid:2401) was sent SIGTERM!
+[2024-10-25 19:50:21 +0000] [531] [ERROR] Worker (pid:2394) was sent SIGTERM!
+[2024-10-25 19:50:21 +0000] [531] [ERROR] Worker (pid:2399) was sent SIGTERM!
+[2024-10-25 19:50:21 +0000] [2459] [INFO] Booting worker with pid: 2459
+[2024-10-25 19:50:21 +0000] [531] [INFO] Handling signal: term
+[2024-10-25 19:50:22 +0000] [531] [ERROR] Worker (pid:2442) was sent SIGTERM!
+[2024-10-25 19:50:22 +0000] [531] [ERROR] Worker (pid:2459) was sent SIGTERM!
+[2024-10-25 19:50:22 +0000] [531] [INFO] Shutting down: Master
+[2024-10-25 19:50:45 +0000] [529] [INFO] Starting gunicorn 23.0.0
+[2024-10-25 19:50:45 +0000] [529] [INFO] Listening at: http://0.0.0.0:8000 (529)
+[2024-10-25 19:50:45 +0000] [529] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-25 19:50:45 +0000] [798] [INFO] Booting worker with pid: 798
+[2024-10-25 19:50:45 +0000] [799] [INFO] Booting worker with pid: 799
+[2024-10-25 19:50:45 +0000] [806] [INFO] Booting worker with pid: 806
+[2024-10-25 19:50:45 +0000] [810] [INFO] Booting worker with pid: 810
+[2024-10-25 19:50:45 +0000] [811] [INFO] Booting worker with pid: 811
+[2024-10-25 19:50:51 +0000] [799] [INFO] Started server process [799]
+[2024-10-25 19:50:51 +0000] [799] [INFO] Waiting for application startup.
+[2024-10-25 19:50:51 +0000] [799] [INFO] Application startup complete.
+[2024-10-25 19:50:51 +0000] [806] [INFO] Started server process [806]
+[2024-10-25 19:50:51 +0000] [806] [INFO] Waiting for application startup.
+[2024-10-25 19:50:51 +0000] [806] [INFO] Application startup complete.
+[2024-10-25 19:50:51 +0000] [798] [INFO] Started server process [798]
+[2024-10-25 19:50:51 +0000] [798] [INFO] Waiting for application startup.
+[2024-10-25 19:50:51 +0000] [798] [INFO] Application startup complete.
+[2024-10-25 19:50:51 +0000] [810] [INFO] Started server process [810]
+[2024-10-25 19:50:51 +0000] [810] [INFO] Waiting for application startup.
+[2024-10-25 19:50:51 +0000] [810] [INFO] Application startup complete.
+[2024-10-25 19:50:51 +0000] [811] [INFO] Started server process [811]
+[2024-10-25 19:50:51 +0000] [811] [INFO] Waiting for application startup.
+[2024-10-25 19:50:51 +0000] [811] [INFO] Application startup complete.
+[2024-10-25 22:32:17 +0000] [531] [INFO] Starting gunicorn 23.0.0
+[2024-10-25 22:32:17 +0000] [531] [INFO] Listening at: http://0.0.0.0:8000 (531)
+[2024-10-25 22:32:17 +0000] [531] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-25 22:32:17 +0000] [804] [INFO] Booting worker with pid: 804
+[2024-10-25 22:32:17 +0000] [807] [INFO] Booting worker with pid: 807
+[2024-10-25 22:32:17 +0000] [810] [INFO] Booting worker with pid: 810
+[2024-10-25 22:32:17 +0000] [815] [INFO] Booting worker with pid: 815
+[2024-10-25 22:32:17 +0000] [818] [INFO] Booting worker with pid: 818
+[2024-10-25 22:32:23 +0000] [807] [INFO] Started server process [807]
+[2024-10-25 22:32:23 +0000] [807] [INFO] Waiting for application startup.
+[2024-10-25 22:32:23 +0000] [807] [INFO] Application startup complete.
+[2024-10-25 22:32:23 +0000] [818] [INFO] Started server process [818]
+[2024-10-25 22:32:23 +0000] [818] [INFO] Waiting for application startup.
+[2024-10-25 22:32:23 +0000] [818] [INFO] Application startup complete.
+[2024-10-25 22:32:23 +0000] [804] [INFO] Started server process [804]
+[2024-10-25 22:32:23 +0000] [804] [INFO] Waiting for application startup.
+[2024-10-25 22:32:23 +0000] [804] [INFO] Application startup complete.
+[2024-10-25 22:32:23 +0000] [815] [INFO] Started server process [815]
+[2024-10-25 22:32:23 +0000] [815] [INFO] Waiting for application startup.
+[2024-10-25 22:32:23 +0000] [815] [INFO] Application startup complete.
+[2024-10-25 22:32:23 +0000] [810] [INFO] Started server process [810]
+[2024-10-25 22:32:23 +0000] [810] [INFO] Waiting for application startup.
+[2024-10-25 22:32:23 +0000] [810] [INFO] Application startup complete.
+[2024-10-25 22:48:55 +0000] [531] [INFO] Handling signal: term
+[2024-10-25 22:48:55 +0000] [807] [INFO] Shutting down
+[2024-10-25 22:48:55 +0000] [815] [INFO] Shutting down
+[2024-10-25 22:48:55 +0000] [818] [INFO] Shutting down
+[2024-10-25 22:48:55 +0000] [804] [INFO] Shutting down
+[2024-10-25 22:48:56 +0000] [810] [INFO] Shutting down
+[2024-10-25 22:48:56 +0000] [807] [INFO] Waiting for application shutdown.
+[2024-10-25 22:48:56 +0000] [807] [INFO] Application shutdown complete.
+[2024-10-25 22:48:56 +0000] [807] [INFO] Finished server process [807]
+[2024-10-25 22:48:56 +0000] [804] [INFO] Waiting for application shutdown.
+[2024-10-25 22:48:56 +0000] [804] [INFO] Application shutdown complete.
+[2024-10-25 22:48:56 +0000] [804] [INFO] Finished server process [804]
+[2024-10-25 22:48:56 +0000] [818] [INFO] Waiting for application shutdown.
+[2024-10-25 22:48:56 +0000] [818] [INFO] Application shutdown complete.
+[2024-10-25 22:48:56 +0000] [818] [INFO] Finished server process [818]
+[2024-10-25 22:48:56 +0000] [815] [INFO] Waiting for application shutdown.
+[2024-10-25 22:48:56 +0000] [815] [INFO] Application shutdown complete.
+[2024-10-25 22:48:56 +0000] [815] [INFO] Finished server process [815]
+[2024-10-25 22:48:56 +0000] [531] [ERROR] Worker (pid:815) was sent SIGTERM!
+[2024-10-25 22:48:56 +0000] [810] [INFO] Waiting for application shutdown.
+[2024-10-25 22:48:56 +0000] [810] [INFO] Application shutdown complete.
+[2024-10-25 22:48:56 +0000] [810] [INFO] Finished server process [810]
+[2024-10-25 22:48:56 +0000] [531] [ERROR] Worker (pid:807) was sent SIGTERM!
+[2024-10-25 22:48:56 +0000] [531] [INFO] Shutting down: Master
+[2024-10-27 13:53:52 +0000] [533] [INFO] Starting gunicorn 23.0.0
+[2024-10-27 13:53:52 +0000] [533] [INFO] Listening at: http://0.0.0.0:8000 (533)
+[2024-10-27 13:53:52 +0000] [533] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-27 13:53:52 +0000] [833] [INFO] Booting worker with pid: 833
+[2024-10-27 13:53:52 +0000] [839] [INFO] Booting worker with pid: 839
+[2024-10-27 13:53:52 +0000] [851] [INFO] Booting worker with pid: 851
+[2024-10-27 13:53:53 +0000] [854] [INFO] Booting worker with pid: 854
+[2024-10-27 13:54:06 +0000] [854] [INFO] Started server process [854]
+[2024-10-27 13:54:06 +0000] [854] [INFO] Waiting for application startup.
+[2024-10-27 13:54:06 +0000] [854] [INFO] Application startup complete.
+[2024-10-27 13:54:06 +0000] [833] [INFO] Started server process [833]
+[2024-10-27 13:54:06 +0000] [833] [INFO] Waiting for application startup.
+[2024-10-27 13:54:06 +0000] [851] [INFO] Started server process [851]
+[2024-10-27 13:54:06 +0000] [851] [INFO] Waiting for application startup.
+[2024-10-27 13:54:06 +0000] [833] [INFO] Application startup complete.
+[2024-10-27 13:54:06 +0000] [851] [INFO] Application startup complete.
+[2024-10-27 13:54:06 +0000] [839] [INFO] Started server process [839]
+[2024-10-27 13:54:06 +0000] [839] [INFO] Waiting for application startup.
+[2024-10-27 13:54:06 +0000] [839] [INFO] Application startup complete.
