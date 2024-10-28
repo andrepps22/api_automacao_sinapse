@@ -12,7 +12,7 @@ reg = setting.DBModelReg
 class ImoveisModel:
     __tablename__= 'imovel'
     
-    codigo_imovel: Mapped[str] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
+    codigo_imovel: Mapped[str] = mapped_column(String, init=False, primary_key=True)
     tipo_imovel: Mapped[str] = mapped_column(String)
     condominio: Mapped[bool] = mapped_column(Boolean)
     rua: Mapped[str] = mapped_column(String)
