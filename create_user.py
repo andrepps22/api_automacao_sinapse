@@ -42,8 +42,8 @@ if __name__ == "__main__":
     import asyncio
 
     usuario = {
-        'username': 'joao',
-        'email': 'nao@tememail.com',
+        'username': 'Andre',
+        'email': 'nao@tem.com',
         'senha': '8EYT56MyNy'
     }
 

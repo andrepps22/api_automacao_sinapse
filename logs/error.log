@@ -1,0 +1,571 @@
+[2024-10-28 17:36:53 +0000] [9459] [INFO] Starting gunicorn 23.0.0
+[2024-10-28 17:36:53 +0000] [9459] [INFO] Listening at: http://0.0.0.0:8000 (9459)
+[2024-10-28 17:36:53 +0000] [9459] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-28 17:36:53 +0000] [9460] [INFO] Booting worker with pid: 9460
+[2024-10-28 17:36:53 +0000] [9461] [INFO] Booting worker with pid: 9461
+[2024-10-28 17:36:53 +0000] [9462] [INFO] Booting worker with pid: 9462
+[2024-10-28 17:36:53 +0000] [9463] [INFO] Booting worker with pid: 9463
+[2024-10-28 17:36:56 +0000] [9460] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/uvicorn/workers.py", line 75, in init_process
+    super().init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ubuntu/api_automacao_sinapse/main.py", line 5, in <module>
+    from api.v1.api import router
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/api.py", line 3, in <module>
+    from api.v1.endpoint import auth, lead, corretor, imoveis, propietario
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/endpoint/lead.py", line 6
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[2024-10-28 17:36:56 +0000] [9460] [INFO] Worker exiting (pid: 9460)
+[2024-10-28 17:36:56 +0000] [9461] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/uvicorn/workers.py", line 75, in init_process
+    super().init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ubuntu/api_automacao_sinapse/main.py", line 5, in <module>
+    from api.v1.api import router
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/api.py", line 3, in <module>
+    from api.v1.endpoint import auth, lead, corretor, imoveis, propietario
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/endpoint/lead.py", line 6
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[2024-10-28 17:36:56 +0000] [9461] [INFO] Worker exiting (pid: 9461)
+[2024-10-28 17:36:56 +0000] [9462] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/uvicorn/workers.py", line 75, in init_process
+    super().init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ubuntu/api_automacao_sinapse/main.py", line 5, in <module>
+    from api.v1.api import router
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/api.py", line 3, in <module>
+    from api.v1.endpoint import auth, lead, corretor, imoveis, propietario
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/endpoint/lead.py", line 6
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[2024-10-28 17:36:56 +0000] [9462] [INFO] Worker exiting (pid: 9462)
+[2024-10-28 17:36:56 +0000] [9463] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/uvicorn/workers.py", line 75, in init_process
+    super().init_process()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/home/ubuntu/api_automacao_sinapse/main.py", line 5, in <module>
+    from api.v1.api import router
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/api.py", line 3, in <module>
+    from api.v1.endpoint import auth, lead, corretor, imoveis, propietario
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/endpoint/lead.py", line 6
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+[2024-10-28 17:36:56 +0000] [9463] [INFO] Worker exiting (pid: 9463)
+[2024-10-28 17:36:56 +0000] [9459] [ERROR] Worker (pid:9460) exited with code 3
+[2024-10-28 17:36:56 +0000] [9459] [ERROR] Worker (pid:9463) was sent SIGTERM!
+[2024-10-28 17:36:56 +0000] [9459] [ERROR] Worker (pid:9462) was sent SIGTERM!
+[2024-10-28 17:36:56 +0000] [9459] [ERROR] Worker (pid:9461) was sent SIGTERM!
+[2024-10-28 17:36:57 +0000] [9459] [ERROR] Shutting down: Master
+[2024-10-28 17:36:57 +0000] [9459] [ERROR] Reason: Worker failed to boot.
+[2024-10-28 17:38:16 +0000] [9523] [INFO] Starting gunicorn 23.0.0
+[2024-10-28 17:38:16 +0000] [9523] [INFO] Listening at: http://0.0.0.0:8000 (9523)
+[2024-10-28 17:38:16 +0000] [9523] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-28 17:38:16 +0000] [9524] [INFO] Booting worker with pid: 9524
+[2024-10-28 17:38:16 +0000] [9525] [INFO] Booting worker with pid: 9525
+[2024-10-28 17:38:16 +0000] [9526] [INFO] Booting worker with pid: 9526
+[2024-10-28 17:38:16 +0000] [9527] [INFO] Booting worker with pid: 9527
+[2024-10-28 17:38:20 +0000] [9524] [INFO] Started server process [9524]
+[2024-10-28 17:38:20 +0000] [9525] [INFO] Started server process [9525]
+[2024-10-28 17:38:20 +0000] [9525] [INFO] Waiting for application startup.
+[2024-10-28 17:38:20 +0000] [9525] [INFO] Application startup complete.
+[2024-10-28 17:38:20 +0000] [9524] [INFO] Waiting for application startup.
+[2024-10-28 17:38:20 +0000] [9526] [INFO] Started server process [9526]
+[2024-10-28 17:38:20 +0000] [9524] [INFO] Application startup complete.
+[2024-10-28 17:38:20 +0000] [9526] [INFO] Waiting for application startup.
+[2024-10-28 17:38:20 +0000] [9527] [INFO] Started server process [9527]
+[2024-10-28 17:38:20 +0000] [9527] [INFO] Waiting for application startup.
+[2024-10-28 17:38:20 +0000] [9526] [INFO] Application startup complete.
+[2024-10-28 17:38:20 +0000] [9527] [INFO] Application startup complete.
+[2024-10-28 17:52:17 +0000] [9527] [ERROR] Exception in ASGI application
+Traceback (most recent call last):
+  File "asyncpg/protocol/prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg/protocol/codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg/protocol/codecs/base.pyx", line 129, in asyncpg.protocol.protocol.Codec.encode_scalar
+  File "asyncpg/pgproto/./codecs/text.pyx", line 29, in asyncpg.pgproto.pgproto.text_encode
+  File "asyncpg/pgproto/./codecs/text.pyx", line 12, in asyncpg.pgproto.pgproto.as_pg_string_and_size
+TypeError: expected str, got int
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 538, in _prepare_and_execute
+    self._rows = deque(await prepared_stmt.fetch(*parameters))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/asyncpg/prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/asyncpg/prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg/protocol/protocol.pyx", line 186, in bind_execute
+  File "asyncpg/protocol/prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $4: 0 (expected str, got int)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.Error: <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $4: 0 (expected str, got int)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/uvicorn/protocols/http/h11_impl.py", line 406, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/routing.py", line 754, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/routing.py", line 774, in app
+    await route.handle(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/routing.py", line 295, in handle
+    await self.app(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 64, in wrapped_app
+    raise exc
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/fastapi/routing.py", line 297, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/fastapi/routing.py", line 210, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/api_automacao_sinapse/api/v1/endpoint/lead.py", line 22, in post_lead
+    await session.execute(query)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/ext/asyncio/session.py", line 461, in execute
+    result = await greenlet_spawn(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 201, in greenlet_spawn
+    result = context.throw(*sys.exc_info())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2362, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2247, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/orm/bulk_persistence.py", line 1305, in orm_execute_statement
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 572, in execute
+    self._adapt_connection.await_(
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 132, in await_only
+    return current.parent.switch(awaitable)  # type: ignore[no-any-return,attr-defined] # noqa: E501
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 196, in greenlet_spawn
+    value = await result
+            ^^^^^^^^^^^^
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 550, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 501, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/home/ubuntu/.cache/pypoetry/virtualenvs/projectone-J71EfY_T-py3.12/lib/python3.12/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 784, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.DBAPIError: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $4: 0 (expected str, got int)
+[SQL: INSERT INTO "Lead" (nome_lead, etapa_lead, cliente_novo, canal_vendas) VALUES ($1::VARCHAR, $2::VARCHAR, $3::BOOLEAN, $4::VARCHAR) RETURNING "Lead".codigo_lead]
+[parameters: ('string', 'string', True, 0)]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+[2024-10-28 18:16:28 +0000] [9523] [INFO] Handling signal: term
+[2024-10-28 18:16:28 +0000] [9524] [INFO] Shutting down
+[2024-10-28 18:16:28 +0000] [9526] [INFO] Shutting down
+[2024-10-28 18:16:28 +0000] [9525] [INFO] Shutting down
+[2024-10-28 18:16:28 +0000] [9527] [INFO] Shutting down
+[2024-10-28 18:16:28 +0000] [9524] [INFO] Waiting for application shutdown.
+[2024-10-28 18:16:28 +0000] [9526] [INFO] Waiting for application shutdown.
+[2024-10-28 18:16:28 +0000] [9524] [INFO] Application shutdown complete.
+[2024-10-28 18:16:28 +0000] [9526] [INFO] Application shutdown complete.
+[2024-10-28 18:16:28 +0000] [9524] [INFO] Finished server process [9524]
+[2024-10-28 18:16:28 +0000] [9526] [INFO] Finished server process [9526]
+[2024-10-28 18:16:28 +0000] [9525] [INFO] Waiting for application shutdown.
+[2024-10-28 18:16:28 +0000] [9525] [INFO] Application shutdown complete.
+[2024-10-28 18:16:28 +0000] [9525] [INFO] Finished server process [9525]
+[2024-10-28 18:16:28 +0000] [9523] [ERROR] Worker (pid:9524) was sent SIGTERM!
+[2024-10-28 18:16:28 +0000] [9523] [ERROR] Worker (pid:9526) was sent SIGTERM!
+[2024-10-28 18:16:28 +0000] [9523] [ERROR] Worker (pid:9525) was sent SIGTERM!
+[2024-10-28 18:16:28 +0000] [9527] [INFO] Waiting for application shutdown.
+[2024-10-28 18:16:28 +0000] [9527] [INFO] Application shutdown complete.
+[2024-10-28 18:16:28 +0000] [9527] [INFO] Finished server process [9527]
+[2024-10-28 18:16:28 +0000] [9523] [ERROR] Worker (pid:9527) was sent SIGTERM!
+[2024-10-28 18:16:28 +0000] [9523] [INFO] Shutting down: Master
+[2024-10-28 18:16:29 +0000] [10447] [INFO] Starting gunicorn 23.0.0
+[2024-10-28 18:16:29 +0000] [10447] [INFO] Listening at: http://0.0.0.0:8000 (10447)
+[2024-10-28 18:16:29 +0000] [10447] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-28 18:16:29 +0000] [10450] [INFO] Booting worker with pid: 10450
+[2024-10-28 18:16:29 +0000] [10451] [INFO] Booting worker with pid: 10451
+[2024-10-28 18:16:29 +0000] [10452] [INFO] Booting worker with pid: 10452
+[2024-10-28 18:16:29 +0000] [10453] [INFO] Booting worker with pid: 10453
+[2024-10-28 18:16:33 +0000] [10451] [INFO] Started server process [10451]
+[2024-10-28 18:16:33 +0000] [10451] [INFO] Waiting for application startup.
+[2024-10-28 18:16:33 +0000] [10451] [INFO] Application startup complete.
+[2024-10-28 18:16:33 +0000] [10452] [INFO] Started server process [10452]
+[2024-10-28 18:16:33 +0000] [10452] [INFO] Waiting for application startup.
+[2024-10-28 18:16:33 +0000] [10452] [INFO] Application startup complete.
+[2024-10-28 18:16:33 +0000] [10450] [INFO] Started server process [10450]
+[2024-10-28 18:16:33 +0000] [10450] [INFO] Waiting for application startup.
+[2024-10-28 18:16:33 +0000] [10450] [INFO] Application startup complete.
+[2024-10-28 18:16:33 +0000] [10453] [INFO] Started server process [10453]
+[2024-10-28 18:16:33 +0000] [10453] [INFO] Waiting for application startup.
+[2024-10-28 18:16:33 +0000] [10453] [INFO] Application startup complete.
+[2024-10-28 18:18:12 +0000] [10447] [INFO] Handling signal: term
+[2024-10-28 18:18:12 +0000] [10453] [INFO] Shutting down
+[2024-10-28 18:18:12 +0000] [10452] [INFO] Shutting down
+[2024-10-28 18:18:12 +0000] [10451] [INFO] Shutting down
+[2024-10-28 18:18:12 +0000] [10450] [INFO] Shutting down
+[2024-10-28 18:18:12 +0000] [10453] [INFO] Waiting for application shutdown.
+[2024-10-28 18:18:12 +0000] [10453] [INFO] Application shutdown complete.
+[2024-10-28 18:18:12 +0000] [10453] [INFO] Finished server process [10453]
+[2024-10-28 18:18:12 +0000] [10447] [ERROR] Worker (pid:10453) was sent SIGTERM!
+[2024-10-28 18:18:12 +0000] [10452] [INFO] Waiting for application shutdown.
+[2024-10-28 18:18:12 +0000] [10452] [INFO] Application shutdown complete.
+[2024-10-28 18:18:12 +0000] [10452] [INFO] Finished server process [10452]
+[2024-10-28 18:18:12 +0000] [10451] [INFO] Waiting for application shutdown.
+[2024-10-28 18:18:12 +0000] [10451] [INFO] Application shutdown complete.
+[2024-10-28 18:18:12 +0000] [10450] [INFO] Waiting for application shutdown.
+[2024-10-28 18:18:12 +0000] [10451] [INFO] Finished server process [10451]
+[2024-10-28 18:18:12 +0000] [10450] [INFO] Application shutdown complete.
+[2024-10-28 18:18:12 +0000] [10450] [INFO] Finished server process [10450]
+[2024-10-28 18:18:12 +0000] [10447] [ERROR] Worker (pid:10452) was sent SIGTERM!
+[2024-10-28 18:18:12 +0000] [10447] [INFO] Shutting down: Master
+[2024-10-28 21:45:41 +0000] [16490] [INFO] Starting gunicorn 23.0.0
+[2024-10-28 21:45:41 +0000] [16490] [INFO] Listening at: http://0.0.0.0:8000 (16490)
+[2024-10-28 21:45:41 +0000] [16490] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-28 21:45:41 +0000] [16491] [INFO] Booting worker with pid: 16491
+[2024-10-28 21:45:41 +0000] [16492] [INFO] Booting worker with pid: 16492
+[2024-10-28 21:45:41 +0000] [16493] [INFO] Booting worker with pid: 16493
+[2024-10-28 21:45:41 +0000] [16494] [INFO] Booting worker with pid: 16494
+[2024-10-28 21:45:45 +0000] [16494] [INFO] Started server process [16494]
+[2024-10-28 21:45:45 +0000] [16494] [INFO] Waiting for application startup.
+[2024-10-28 21:45:45 +0000] [16491] [INFO] Started server process [16491]
+[2024-10-28 21:45:45 +0000] [16491] [INFO] Waiting for application startup.
+[2024-10-28 21:45:45 +0000] [16493] [INFO] Started server process [16493]
+[2024-10-28 21:45:45 +0000] [16493] [INFO] Waiting for application startup.
+[2024-10-28 21:45:45 +0000] [16491] [INFO] Application startup complete.
+[2024-10-28 21:45:45 +0000] [16492] [INFO] Started server process [16492]
+[2024-10-28 21:45:45 +0000] [16493] [INFO] Application startup complete.
+[2024-10-28 21:45:45 +0000] [16494] [INFO] Application startup complete.
+[2024-10-28 21:45:45 +0000] [16492] [INFO] Waiting for application startup.
+[2024-10-28 21:45:45 +0000] [16492] [INFO] Application startup complete.
+[2024-10-28 22:08:30 +0000] [16490] [INFO] Handling signal: term
+[2024-10-28 22:08:30 +0000] [16492] [INFO] Shutting down
+[2024-10-28 22:08:30 +0000] [16493] [INFO] Shutting down
+[2024-10-28 22:08:30 +0000] [16494] [INFO] Shutting down
+[2024-10-28 22:08:30 +0000] [16491] [INFO] Shutting down
+[2024-10-28 22:08:30 +0000] [16492] [INFO] Waiting for application shutdown.
+[2024-10-28 22:08:30 +0000] [16492] [INFO] Application shutdown complete.
+[2024-10-28 22:08:30 +0000] [16492] [INFO] Finished server process [16492]
+[2024-10-28 22:08:30 +0000] [16490] [ERROR] Worker (pid:16492) was sent SIGTERM!
+[2024-10-28 22:08:30 +0000] [16493] [INFO] Waiting for application shutdown.
+[2024-10-28 22:08:30 +0000] [16493] [INFO] Application shutdown complete.
+[2024-10-28 22:08:30 +0000] [16493] [INFO] Finished server process [16493]
+[2024-10-28 22:08:30 +0000] [16494] [INFO] Waiting for application shutdown.
+[2024-10-28 22:08:30 +0000] [16494] [INFO] Application shutdown complete.
+[2024-10-28 22:08:30 +0000] [16494] [INFO] Finished server process [16494]
+[2024-10-28 22:08:30 +0000] [16490] [ERROR] Worker (pid:16493) was sent SIGTERM!
+[2024-10-28 22:08:30 +0000] [16490] [ERROR] Worker (pid:16494) was sent SIGTERM!
+[2024-10-28 22:08:30 +0000] [16491] [INFO] Waiting for application shutdown.
+[2024-10-28 22:08:30 +0000] [16491] [INFO] Application shutdown complete.
+[2024-10-28 22:08:30 +0000] [16491] [INFO] Finished server process [16491]
+[2024-10-28 22:08:30 +0000] [16490] [ERROR] Worker (pid:16491) was sent SIGTERM!
+[2024-10-28 22:08:30 +0000] [16490] [INFO] Shutting down: Master
+[2024-10-29 12:18:59 +0000] [19160] [INFO] Starting gunicorn 23.0.0
+[2024-10-29 12:18:59 +0000] [19160] [INFO] Listening at: http://0.0.0.0:8000 (19160)
+[2024-10-29 12:18:59 +0000] [19160] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-29 12:18:59 +0000] [19161] [INFO] Booting worker with pid: 19161
+[2024-10-29 12:18:59 +0000] [19162] [INFO] Booting worker with pid: 19162
+[2024-10-29 12:18:59 +0000] [19163] [INFO] Booting worker with pid: 19163
+[2024-10-29 12:19:00 +0000] [19164] [INFO] Booting worker with pid: 19164
+[2024-10-29 12:19:03 +0000] [19161] [INFO] Started server process [19161]
+[2024-10-29 12:19:03 +0000] [19161] [INFO] Waiting for application startup.
+[2024-10-29 12:19:03 +0000] [19161] [INFO] Application startup complete.
+[2024-10-29 12:19:03 +0000] [19162] [INFO] Started server process [19162]
+[2024-10-29 12:19:03 +0000] [19162] [INFO] Waiting for application startup.
+[2024-10-29 12:19:03 +0000] [19162] [INFO] Application startup complete.
+[2024-10-29 12:19:03 +0000] [19163] [INFO] Started server process [19163]
+[2024-10-29 12:19:03 +0000] [19163] [INFO] Waiting for application startup.
+[2024-10-29 12:19:03 +0000] [19163] [INFO] Application startup complete.
+[2024-10-29 12:19:03 +0000] [19164] [INFO] Started server process [19164]
+[2024-10-29 12:19:03 +0000] [19164] [INFO] Waiting for application startup.
+[2024-10-29 12:19:03 +0000] [19164] [INFO] Application startup complete.
+[2024-10-29 13:42:05 +0000] [19160] [INFO] Handling signal: term
+[2024-10-29 13:42:05 +0000] [19161] [INFO] Shutting down
+[2024-10-29 13:42:05 +0000] [19162] [INFO] Shutting down
+[2024-10-29 13:42:05 +0000] [19163] [INFO] Shutting down
+[2024-10-29 13:42:05 +0000] [19164] [INFO] Shutting down
+[2024-10-29 13:42:05 +0000] [19161] [INFO] Waiting for application shutdown.
+[2024-10-29 13:42:05 +0000] [19161] [INFO] Application shutdown complete.
+[2024-10-29 13:42:05 +0000] [19161] [INFO] Finished server process [19161]
+[2024-10-29 13:42:05 +0000] [19162] [INFO] Waiting for application shutdown.
+[2024-10-29 13:42:05 +0000] [19162] [INFO] Application shutdown complete.
+[2024-10-29 13:42:05 +0000] [19162] [INFO] Finished server process [19162]
+[2024-10-29 13:42:05 +0000] [19163] [INFO] Waiting for application shutdown.
+[2024-10-29 13:42:05 +0000] [19163] [INFO] Application shutdown complete.
+[2024-10-29 13:42:05 +0000] [19163] [INFO] Finished server process [19163]
+[2024-10-29 13:42:05 +0000] [19164] [INFO] Waiting for application shutdown.
+[2024-10-29 13:42:05 +0000] [19164] [INFO] Application shutdown complete.
+[2024-10-29 13:42:05 +0000] [19164] [INFO] Finished server process [19164]
+[2024-10-29 13:42:05 +0000] [19160] [ERROR] Worker (pid:19161) was sent SIGTERM!
+[2024-10-29 13:42:05 +0000] [19160] [ERROR] Worker (pid:19162) was sent SIGTERM!
+[2024-10-29 13:42:05 +0000] [19160] [ERROR] Worker (pid:19163) was sent SIGTERM!
+[2024-10-29 13:42:05 +0000] [19160] [ERROR] Worker (pid:19164) was sent SIGTERM!
+[2024-10-29 13:42:05 +0000] [19160] [INFO] Shutting down: Master
+[2024-10-29 13:42:06 +0000] [21500] [INFO] Starting gunicorn 23.0.0
+[2024-10-29 13:42:06 +0000] [21500] [INFO] Listening at: http://0.0.0.0:8000 (21500)
+[2024-10-29 13:42:06 +0000] [21500] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-29 13:42:06 +0000] [21501] [INFO] Booting worker with pid: 21501
+[2024-10-29 13:42:06 +0000] [21502] [INFO] Booting worker with pid: 21502
+[2024-10-29 13:42:06 +0000] [21503] [INFO] Booting worker with pid: 21503
+[2024-10-29 13:42:06 +0000] [21504] [INFO] Booting worker with pid: 21504
+[2024-10-29 13:42:10 +0000] [21501] [INFO] Started server process [21501]
+[2024-10-29 13:42:10 +0000] [21504] [INFO] Started server process [21504]
+[2024-10-29 13:42:10 +0000] [21504] [INFO] Waiting for application startup.
+[2024-10-29 13:42:10 +0000] [21504] [INFO] Application startup complete.
+[2024-10-29 13:42:10 +0000] [21501] [INFO] Waiting for application startup.
+[2024-10-29 13:42:10 +0000] [21501] [INFO] Application startup complete.
+[2024-10-29 13:42:10 +0000] [21503] [INFO] Started server process [21503]
+[2024-10-29 13:42:10 +0000] [21503] [INFO] Waiting for application startup.
+[2024-10-29 13:42:10 +0000] [21503] [INFO] Application startup complete.
+[2024-10-29 13:42:10 +0000] [21502] [INFO] Started server process [21502]
+[2024-10-29 13:42:10 +0000] [21502] [INFO] Waiting for application startup.
+[2024-10-29 13:42:10 +0000] [21502] [INFO] Application startup complete.
+[2024-10-29 13:46:53 +0000] [21500] [INFO] Handling signal: term
+[2024-10-29 13:46:53 +0000] [21501] [INFO] Shutting down
+[2024-10-29 13:46:53 +0000] [21504] [INFO] Shutting down
+[2024-10-29 13:46:53 +0000] [21502] [INFO] Shutting down
+[2024-10-29 13:46:53 +0000] [21503] [INFO] Shutting down
+[2024-10-29 13:46:53 +0000] [21501] [INFO] Waiting for application shutdown.
+[2024-10-29 13:46:53 +0000] [21501] [INFO] Application shutdown complete.
+[2024-10-29 13:46:53 +0000] [21501] [INFO] Finished server process [21501]
+[2024-10-29 13:46:53 +0000] [21502] [INFO] Waiting for application shutdown.
+[2024-10-29 13:46:53 +0000] [21502] [INFO] Application shutdown complete.
+[2024-10-29 13:46:53 +0000] [21502] [INFO] Finished server process [21502]
+[2024-10-29 13:46:53 +0000] [21504] [INFO] Waiting for application shutdown.
+[2024-10-29 13:46:53 +0000] [21504] [INFO] Application shutdown complete.
+[2024-10-29 13:46:53 +0000] [21504] [INFO] Finished server process [21504]
+[2024-10-29 13:46:53 +0000] [21503] [INFO] Waiting for application shutdown.
+[2024-10-29 13:46:53 +0000] [21500] [ERROR] Worker (pid:21501) was sent SIGTERM!
+[2024-10-29 13:46:53 +0000] [21503] [INFO] Application shutdown complete.
+[2024-10-29 13:46:53 +0000] [21503] [INFO] Finished server process [21503]
+[2024-10-29 13:46:53 +0000] [21500] [ERROR] Worker (pid:21502) was sent SIGTERM!
+[2024-10-29 13:46:53 +0000] [21500] [ERROR] Worker (pid:21504) was sent SIGTERM!
+[2024-10-29 13:46:53 +0000] [21500] [ERROR] Worker (pid:21503) was sent SIGTERM!
+[2024-10-29 13:46:53 +0000] [21500] [INFO] Shutting down: Master
+[2024-10-29 13:46:53 +0000] [21600] [INFO] Starting gunicorn 23.0.0
+[2024-10-29 13:46:53 +0000] [21600] [INFO] Listening at: http://0.0.0.0:8000 (21600)
+[2024-10-29 13:46:53 +0000] [21600] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2024-10-29 13:46:53 +0000] [21602] [INFO] Booting worker with pid: 21602
+[2024-10-29 13:46:53 +0000] [21603] [INFO] Booting worker with pid: 21603
+[2024-10-29 13:46:53 +0000] [21604] [INFO] Booting worker with pid: 21604
+[2024-10-29 13:46:53 +0000] [21605] [INFO] Booting worker with pid: 21605
+[2024-10-29 13:46:57 +0000] [21602] [INFO] Started server process [21602]
+[2024-10-29 13:46:57 +0000] [21602] [INFO] Waiting for application startup.
+[2024-10-29 13:46:57 +0000] [21602] [INFO] Application startup complete.
+[2024-10-29 13:46:57 +0000] [21603] [INFO] Started server process [21603]
+[2024-10-29 13:46:57 +0000] [21603] [INFO] Waiting for application startup.
+[2024-10-29 13:46:57 +0000] [21603] [INFO] Application startup complete.
+[2024-10-29 13:46:57 +0000] [21604] [INFO] Started server process [21604]
+[2024-10-29 13:46:57 +0000] [21604] [INFO] Waiting for application startup.
+[2024-10-29 13:46:57 +0000] [21604] [INFO] Application startup complete.
+[2024-10-29 13:46:57 +0000] [21605] [INFO] Started server process [21605]
+[2024-10-29 13:46:57 +0000] [21605] [INFO] Waiting for application startup.
+[2024-10-29 13:46:57 +0000] [21605] [INFO] Application startup complete.
+[2024-10-29 18:32:50 +0000] [21600] [INFO] Handling signal: term
+[2024-10-29 18:32:50 +0000] [21604] [INFO] Shutting down
+[2024-10-29 18:32:50 +0000] [21605] [INFO] Shutting down
+[2024-10-29 18:32:50 +0000] [21603] [INFO] Shutting down
+[2024-10-29 18:32:50 +0000] [21602] [INFO] Shutting down
+[2024-10-29 18:32:50 +0000] [21604] [INFO] Waiting for application shutdown.
+[2024-10-29 18:32:50 +0000] [21604] [INFO] Application shutdown complete.
+[2024-10-29 18:32:50 +0000] [21604] [INFO] Finished server process [21604]
+[2024-10-29 18:32:50 +0000] [21603] [INFO] Waiting for application shutdown.
+[2024-10-29 18:32:50 +0000] [21603] [INFO] Application shutdown complete.
+[2024-10-29 18:32:50 +0000] [21603] [INFO] Finished server process [21603]
+[2024-10-29 18:32:50 +0000] [21605] [INFO] Waiting for application shutdown.
+[2024-10-29 18:32:50 +0000] [21605] [INFO] Application shutdown complete.
+[2024-10-29 18:32:50 +0000] [21605] [INFO] Finished server process [21605]
+[2024-10-29 18:32:50 +0000] [21602] [INFO] Waiting for application shutdown.
+[2024-10-29 18:32:50 +0000] [21602] [INFO] Application shutdown complete.
+[2024-10-29 18:32:50 +0000] [21602] [INFO] Finished server process [21602]
+[2024-10-29 18:32:50 +0000] [21600] [ERROR] Worker (pid:21604) was sent SIGTERM!
+[2024-10-29 18:32:50 +0000] [21600] [ERROR] Worker (pid:21603) was sent SIGTERM!
+[2024-10-29 18:32:50 +0000] [21600] [ERROR] Worker (pid:21602) was sent SIGTERM!
+[2024-10-29 18:32:50 +0000] [21600] [ERROR] Worker (pid:21605) was sent SIGTERM!
+[2024-10-29 18:32:50 +0000] [21600] [INFO] Shutting down: Master

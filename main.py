@@ -1,14 +1,15 @@
 from fastapi import FastAPI, Depends
-from fastapi.security import HTTPBasic, HTTPBasicCredentials
+from fastapi.security import HTTPBearer
 from core.security import pegar_usuario_corrente
 
 from api.v1.api import router
 
-security = HTTPBasic()
 
-app = FastAPI()
+app = FastAPI(docs_url=False, redoc_url=False)
 
 app.include_router(router)
+
+security = HTTPBearer()
 
 @app.get("/docs", include_in_schema=False)
 async def get_docs(credentials = Depends(pegar_usuario_corrente)):
