@@ -4,7 +4,7 @@ from sqlalchemy import select, insert, delete, update
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 from models.corretor_model import CorretorModel
-from schemas.corretor_Schemas import CorretorSchema
+from schemas.corretor_Schemas import CorretorSchema, CorretorPublicSchema
 from typing import List
 from core.deps import get_session
 
@@ -30,7 +30,7 @@ async def post_corretor(db: AsyncSession = Depends(get_session), corretor: Corre
                             detail='Por favor verifique os campos e tente novamente.')
 
 
-@router.get('/corretor/', response_model=List[CorretorSchema], status_code=status.HTTP_200_OK, tags=['Corretor'])
+@router.get('/corretor/', response_model=List[CorretorPublicSchema], status_code=status.HTTP_200_OK, tags=['Corretor'])
 async def get_corretor(db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         sql = select(CorretorModel)
@@ -40,7 +40,7 @@ async def get_corretor(db: AsyncSession = Depends(get_session), current_user=Dep
     return corretores
 
 
-@router.get('/corretor/{id_corretor}', response_model=CorretorSchema, status_code=status.HTTP_200_OK, tags=['Corretor'])
+@router.get('/corretor/{id_corretor}', response_model=CorretorPublicSchema, status_code=status.HTTP_200_OK, tags=['Corretor'])
 async def get_corretor(id: int, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         sql = select(CorretorModel).where(CorretorModel.id_corretor == id)

@@ -36,3 +36,16 @@ async def get_proprietario(db: AsyncSession = Depends(get_session), current_user
         propietarios: List = result.scalars().all() 
         if propietarios:
             return propietarios
+        
+        
+@router.get('/proprietario/{id_proprietario}', status_code=status.HTTP_200_OK, response_model=PropietarioIDSchema, tags=['Proprietario'])
+async def get_proprietario(id_proprietario:int, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
+    async with db as session:
+        query = select(PropietarioModel).where(PropietarioModel.id_proprietario == id_proprietario)
+        result = await session.execute(query)
+        proprietario = result.scalars().one_or_none()
+        if proprietario:
+            return proprietario
+        else:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Não existe propietario com este id: {id_proprietario}')
+           

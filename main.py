@@ -5,7 +5,10 @@ from core.security import pegar_usuario_corrente
 from api.v1.api import router
 
 
-app = FastAPI(docs_url=False, redoc_url=False)
+app = FastAPI(title='SinapseGH',
+              redoc_url=False,
+              version='0.0.1'
+              )
 
 app.include_router(router)
 

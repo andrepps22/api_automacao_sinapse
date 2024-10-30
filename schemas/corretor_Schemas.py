@@ -10,3 +10,5 @@ class CorretorSchema(BaseModel):
     celular: str
     
     
+class CorretorPublicSchema(CorretorSchema):
+    id_corretor: int

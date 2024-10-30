@@ -37,7 +37,7 @@ async def post_imoveis(imovel: ImovelSchema = ImovelSchema, db: AsyncSession = D
         return imovel
 
 
-@router.get('/imoveis/', status_code=status.HTTP_200_OK, tags=['Imoveis'])
+@router.get('/imoveis/', response_model=List[ImovelSchema], status_code=status.HTTP_200_OK, tags=['Imoveis'])
 async def get_imoveis(db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         query = select(ImoveisModel)
@@ -45,3 +45,15 @@ async def get_imoveis(db: AsyncSession = Depends(get_session), current_user=Depe
         imoveis: List = result.scalars().all()
 
     return imoveis
+
+
+@router.get('/imoveis/{codigo_imovel}', response_model=ImovelSchema, status_code=status.HTTP_200_OK, tags=['Imoveis'])
+async def get_imoveis(codigo_imovel:int,  db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
+    async with db as session:
+        query = select(ImoveisModel).where(ImoveisModel.codigo_imovel == codigo_imovel)
+        result = await session.execute(query)
+        imovel = result.scalars().one_or_none()
+        if imovel:
+            return imovel
+        else:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Não existe Imóvel com este codigo: {codigo_imovel}')
