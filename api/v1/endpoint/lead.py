@@ -14,11 +14,13 @@ router = APIRouter()
 async def post_lead(lead:LeadSchema, current_user=Depends(pegar_usuario_corrente), db: AsyncSession = Depends(get_session)):
     async with db as session:
         query = insert(LeadModel).values(
-            nome_lead=lead.nome_lead,
-            etapa_lead = lead.etapa_lead,
-            cliente_novo = lead.cliente_novo,
-            canal_vendas = lead.canal_vendas
+            codigo_lead = lead.codigo_lead,
+            Tipo_post = lead.Tipo_post,
+            nome_lead = lead.nome_lead,
+            campanha = lead.campanha,
+            numero_lead_celular = lead.numero_lead
         )
+        
         await session.execute(query)
         await session.commit()
     

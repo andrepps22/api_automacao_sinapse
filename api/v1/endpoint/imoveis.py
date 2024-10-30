@@ -5,7 +5,6 @@ from sqlalchemy.exc import IntegrityError
 from models.imoveis_model import ImoveisModel
 from schemas.imovel_schema import ImovelSchema
 from core.security import pegar_usuario_corrente
-import json
 from typing import List
 from core.deps import get_session
 
@@ -18,15 +17,19 @@ async def post_imoveis(imovel: ImovelSchema = ImovelSchema, db: AsyncSession = D
     async with db as session:
         query = insert(ImoveisModel).values(
             codigo_imovel=imovel.codigo_imovel,
+            codigo_corretor=imovel.codigo_corretor,
+            codigo_proprietario=imovel.codigo_proprietario,
             tipo_imovel=imovel.tipo_imovel,
-            condominio = imovel.condominio,
+            condominio=imovel.condominio,
             rua=imovel.rua,
             numero=imovel.numero,
             referencia=imovel.referencia,
             descricao=imovel.descricao,
-            imagens=imovel.imagens,
+            quartos=imovel.quartos,
+            cozinha=imovel.cozinha,
+            sacada=imovel.sacada,
+            banheiro=imovel.sacada,
             observacoes=imovel.observacoes,
-            id_propietario=int(imovel.id_propietario),
             cep=imovel.cep)
 
         await session.execute(query)
@@ -40,5 +43,5 @@ async def get_imoveis(db: AsyncSession = Depends(get_session), current_user=Depe
         query = select(ImoveisModel)
         result = await session.execute(query)
         imoveis: List = result.scalars().all()
-    
+
     return imoveis
