@@ -9,14 +9,16 @@ reg = setting.DBModelReg
 
 @reg.mapped_as_dataclass()
 class LeadModel:
-    __tablename__ = "Lead"
+    __tablename__ = "client_lead"
     
     codigo_lead: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
     nome_lead: Mapped[str] = mapped_column(String)
-    etapa_lead: Mapped[str] = mapped_column(String)
-    cliente_novo: Mapped[bool] = mapped_column(Boolean)
-    canal_vendas: Mapped[str] = mapped_column(String, nullable=True)
+    Tipo_post: Mapped[str] = mapped_column(String)
+    campanha: Mapped[str] = mapped_column(String)
+    numero_lead_celular: Mapped[str] = mapped_column(String)
+    origem_lead: Mapped[str] = mapped_column(String)
     create_at: Mapped[datetime] = mapped_column(DateTime, init=False, server_default=func.now())
 
     
     __table_args__ = {'extend_existing': True}
+    
