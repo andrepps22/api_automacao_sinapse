@@ -5,6 +5,7 @@ from typing import Dict
 
 
 
+
 reg = setting.DBModelReg
 
 
@@ -12,7 +13,7 @@ reg = setting.DBModelReg
 class ImoveisModel:
     __tablename__= 'imovel'
     
-    codigo_imovel: Mapped[str] = mapped_column(String, init=False, primary_key=True)
+    codigo_imovel: Mapped[str] = mapped_column(String, primary_key=True)
     codigo_corretor: Mapped[int] = mapped_column(Integer, ForeignKey('corretor.id_corretor'))
     codigo_proprietario: Mapped[int] = mapped_column(Integer, ForeignKey('proprietario.id_proprietario'))
     tipo_imovel: Mapped[str] = mapped_column(String)
@@ -29,3 +30,6 @@ class ImoveisModel:
     cep: Mapped[str] = mapped_column(String)
     
     __table_args__ = {'extend_existing': True}
+    
+    
+   

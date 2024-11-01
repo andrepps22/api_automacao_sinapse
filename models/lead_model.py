@@ -11,7 +11,7 @@ reg = setting.DBModelReg
 class LeadModel:
     __tablename__ = "client_lead"
     
-    codigo_lead: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
+    codigo_lead: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     nome_lead: Mapped[str] = mapped_column(String)
     canal_vendas: Mapped[str] = mapped_column(String, nullable=True)
     Tipo_post: Mapped[str] = mapped_column(String)

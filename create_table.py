@@ -3,7 +3,7 @@ import os
 from core.config import Setting
 
 engine = create_engine(os.getenv('DB_URL_SYNC'), echo=True)
-#engine = create_engine('sqlite:///sqldblite.db', echo=True)
+
 
 # Função síncrona para criar as tabelas
 def criar_tabelas():

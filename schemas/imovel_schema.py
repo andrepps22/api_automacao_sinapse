@@ -1,15 +1,12 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import List, Optional
-
-
-
-
+from core.criar_codigo import criar_codigo
 
 
 class ImovelSchema(BaseModel):
-    codigo_imovel: str
-    codigo_corretor: int
-    codigo_proprietario: int
+    codigo_imovel: Optional[str] = None
+    codigo_corretor: str
+    codigo_proprietario: str
     tipo_imovel: str
     condominio: bool
     rua: str
@@ -24,4 +21,8 @@ class ImovelSchema(BaseModel):
     observacoes: str = None
     cep: str
 
-
+    def __init__(self, **data):
+        super().__init__(**data)
+        if not self.codigo_imovel:
+            self.codigo_imovel = criar_codigo(self.tipo_imovel)
+            print(self.codigo_imovel, self.tipo_imovel)

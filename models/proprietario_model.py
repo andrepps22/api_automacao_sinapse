@@ -10,7 +10,7 @@ reg = setting.DBModelReg
 class PropietarioModel:
     __tablename__='proprietario'
     
-    id_proprietario: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
+    id_proprietario: Mapped[str] = mapped_column(String, primary_key=True)
     nome: Mapped[str] = mapped_column(String)
     cpf: Mapped[str] = mapped_column(String, unique=True)
     endereco: Mapped[str] = mapped_column(String)

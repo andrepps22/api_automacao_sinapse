@@ -10,7 +10,7 @@ reg = setting.DBModelReg
 class CorretorModel:
     __tablename__ = 'corretor'
     
-    id_corretor: Mapped[int] = mapped_column(Integer, init=False, primary_key=True, autoincrement=True)
+    id_corretor: Mapped[str] = mapped_column(String, primary_key=True)
     nome: Mapped[str] = mapped_column(String)
     cpf: Mapped[str] = mapped_column(String ,unique=True)
     endereco: Mapped[str] = mapped_column(String)

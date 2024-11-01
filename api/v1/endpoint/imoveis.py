@@ -47,8 +47,13 @@ async def get_imoveis(db: AsyncSession = Depends(get_session), current_user=Depe
     return imoveis
 
 
+<<<<<<< HEAD
 @router.get('/imoveis/{codigo_imovel}', response_model=ImovelSchema, status_code=status.HTTP_200_OK, tags=['Imoveis'])
 async def get_imoveis(codigo_imovel:int,  db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
+=======
+@router.get('/imoveis/{codigo_imovel}', status_code=status.HTTP_200_OK, tags=['Imoveis'])
+async def get_imoveis(codigo_imovel:str, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
+>>>>>>> 84fc453 (atualização de dados)
     async with db as session:
         query = select(ImoveisModel).where(ImoveisModel.codigo_imovel == codigo_imovel)
         result = await session.execute(query)
@@ -56,4 +61,9 @@ async def get_imoveis(codigo_imovel:int,  db: AsyncSession = Depends(get_session
         if imovel:
             return imovel
         else:
+<<<<<<< HEAD
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Não existe Imóvel com este codigo: {codigo_imovel}')
+=======
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                                detail=f'Não exites nenhum imóvel com o id: {codigo_imovel}')
+>>>>>>> 84fc453 (atualização de dados)
