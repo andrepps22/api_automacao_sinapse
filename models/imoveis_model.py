@@ -14,8 +14,8 @@ class ImoveisModel:
     __tablename__= 'imovel'
     
     codigo_imovel: Mapped[str] = mapped_column(String, primary_key=True)
-    codigo_corretor: Mapped[int] = mapped_column(Integer, ForeignKey('corretor.id_corretor'))
-    codigo_proprietario: Mapped[int] = mapped_column(Integer, ForeignKey('proprietario.id_proprietario'))
+    codigo_corretor: Mapped[str] = mapped_column(String)
+    nome_proprietario: Mapped[str] = mapped_column(String)
     tipo_imovel: Mapped[str] = mapped_column(String)
     condominio: Mapped[bool] = mapped_column(Boolean)
     rua: Mapped[str] = mapped_column(String)

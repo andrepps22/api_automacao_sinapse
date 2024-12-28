@@ -20,8 +20,7 @@ async def post_proprietario(proprietario: ProprietarioSchema = ProprietarioSchem
                 id_proprietario = criar_codigo("Proprietario"),
                 nome = proprietario.nome,
                 cpf = proprietario.cpf,
-                endereco = proprietario.endereco,
-                data_nascimento = proprietario.data_nascimento    
+                endereco = proprietario.endereco  
         )
 
         await session.execute(query)
@@ -35,23 +34,6 @@ async def get_proprietario(db: AsyncSession = Depends(get_session), current_user
         query = select(PropietarioModel)
         result = await session.execute(query)
         propietarios: List = result.scalars().all() 
-<<<<<<< HEAD
-        if propietarios:
-            return propietarios
-        
-        
-@router.get('/proprietario/{id_proprietario}', status_code=status.HTTP_200_OK, response_model=PropietarioIDSchema, tags=['Proprietario'])
-async def get_proprietario(id_proprietario:int, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
-    async with db as session:
-        query = select(PropietarioModel).where(PropietarioModel.id_proprietario == id_proprietario)
-        result = await session.execute(query)
-        proprietario = result.scalars().one_or_none()
-        if proprietario:
-            return proprietario
-        else:
-            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Não existe propietario com este id: {id_proprietario}')
-           
-=======
         return propietarios
         
         
@@ -66,4 +48,3 @@ async def get_proprietario(id_proprietario:str, db: AsyncSession = Depends(get_s
         else:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
                                 detail=f'Não exites nenhum proprietario com o id: {id_proprietario}')
->>>>>>> 84fc453 (atualização de dados)

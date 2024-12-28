@@ -8,10 +8,3 @@ class CorretorSchema(BaseModel):
     cpf: str
     endereco: str
     celular: str
-<<<<<<< HEAD
-    
-    
-class CorretorPublicSchema(CorretorSchema):
-    id_corretor: int
-=======
->>>>>>> 84fc453 (atualização de dados)

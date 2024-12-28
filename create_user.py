@@ -42,13 +42,9 @@ if __name__ == "__main__":
     import asyncio
 
     usuario = {
-        'username': 'Andre',
-<<<<<<< HEAD
-        'email': 'nao@tem.com',
-=======
-        'email': 'nao@tememail.com',
->>>>>>> 84fc453 (atualização de dados)
-        'senha': '8EYT56MyNy'
+        'username': 'andre',
+        'email': 'andrepps22@gmail.com',
+        'senha': '22101997'
     }
 
     asyncio.run(criar_usuario(usuario))

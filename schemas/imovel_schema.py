@@ -6,7 +6,7 @@ from core.criar_codigo import criar_codigo
 class ImovelSchema(BaseModel):
     codigo_imovel: Optional[str] = None
     codigo_corretor: str
-    codigo_proprietario: str
+    nome_proprietario: str
     tipo_imovel: str
     condominio: bool
     rua: str

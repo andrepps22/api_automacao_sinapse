@@ -9,5 +9,4 @@ class ProprietarioSchema(BaseModel):
     nome: str
     cpf: str
     endereco: str
-    data_nascimento: datetime
 

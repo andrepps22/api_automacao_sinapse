@@ -14,8 +14,7 @@ router = APIRouter(prefix='/auth/token', tags=['Auth'])
 @router.post('', response_model=TokenSchemas)
 async def login_para_acess_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
-    db: AsyncSession = Depends(get_session),
-    current_user = Depends(pegar_usuario_corrente)):
+    db: AsyncSession = Depends(get_session)):
 
 
     try:

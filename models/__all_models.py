@@ -1,4 +1,4 @@
-# from models.usuarios_model import UsuarioModel
+from models.usuarios_model import UsuarioModel
 from models.corretor_model import CorretorModel
 from models.imoveis_model import ImoveisModel
 from models.proprietario_model import PropietarioModel

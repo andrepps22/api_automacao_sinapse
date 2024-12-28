@@ -1,12 +1,11 @@
 from fastapi import APIRouter, status, Depends, HTTPException
 from core.security import pegar_usuario_corrente
-from sqlalchemy import select, insert, delete, update
+from sqlalchemy import select, insert
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.exc import IntegrityError
 from models.corretor_model import CorretorModel
-from schemas.corretor_Schemas import CorretorSchema, CorretorPublicSchema
+from schemas.corretor_Schemas import CorretorSchema
 from typing import List
-from core.criar_codigo import criar_codigo
 from core.deps import get_session
 
 
@@ -31,7 +30,7 @@ async def post_corretor(db: AsyncSession = Depends(get_session), corretor: Corre
                             detail='Por favor verifique os campos e tente novamente.')
 
 
-@router.get('/corretor/', response_model=List[CorretorPublicSchema], status_code=status.HTTP_200_OK, tags=['Corretor'])
+@router.get('/corretor/', response_model=List[CorretorSchema], status_code=status.HTTP_200_OK, tags=['Corretor'])
 async def get_corretor(db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
     async with db as session:
         sql = select(CorretorModel)
@@ -41,19 +40,14 @@ async def get_corretor(db: AsyncSession = Depends(get_session), current_user=Dep
     return corretores
 
 
-<<<<<<< HEAD
-@router.get('/corretor/{id_corretor}', response_model=CorretorPublicSchema, status_code=status.HTTP_200_OK, tags=['Corretor'])
-async def get_corretor(id: int, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
-=======
 @router.get('/corretor/{id_corretor}', response_model=CorretorSchema, status_code=status.HTTP_200_OK, tags=['Corretor'])
 async def get_corretor(id_corretor: str, db: AsyncSession = Depends(get_session), current_user=Depends(pegar_usuario_corrente)):
->>>>>>> 84fc453 (atualização de dados)
     async with db as session:
-        sql = select(CorretorModel).where(CorretorModel.id_corretor == id)
+        sql = select(CorretorModel).where(CorretorModel.id_corretor == id_corretor)
         resposta = await session.execute(sql)
         corretor = resposta.scalars().one_or_none()
         if corretor:
             return corretor
         else:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
-                                detail=f'Não exites nenhum corretor com o id: {id}')
+                                detail=f'Não exites nenhum corretor com o id: {id_corretor}')

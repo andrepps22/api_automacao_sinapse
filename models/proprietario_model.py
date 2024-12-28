@@ -14,6 +14,5 @@ class PropietarioModel:
     nome: Mapped[str] = mapped_column(String)
     cpf: Mapped[str] = mapped_column(String, unique=True)
     endereco: Mapped[str] = mapped_column(String)
-    data_nascimento: Mapped[date] = mapped_column()
     
     __table_args__ = {'extend_existing': True}
