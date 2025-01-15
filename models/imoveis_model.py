@@ -1,8 +1,7 @@
 from core.config import setting
 from sqlalchemy.orm import Mapped, mapped_column
-from sqlalchemy import ForeignKey, Integer, String, JSON, DateTime, func
+from sqlalchemy import Integer, String, JSON, DateTime, func
 from datetime import  datetime
-from typing import Dict
 
 
 
@@ -16,15 +15,18 @@ class ImoveisModel:
 
 
     codigoImovel: Mapped[str] = mapped_column(String, primary_key=True)
+    codigoProprietario: Mapped[str] = mapped_column(String)
     codigoCorretor: Mapped[str] = mapped_column(String)
-    numeroRegistro: Mapped[int] = mapped_column(Integer)
+    numeroRegistro: Mapped[int] = mapped_column(Integer, unique=True)
     documentoRegistro: Mapped[str] = mapped_column(JSON)
-    numeroMatricula: Mapped[int] = mapped_column(Integer)
+    numeroMatricula: Mapped[int] = mapped_column(Integer, unique=True)
     documentoMatricula: Mapped[str] = mapped_column(JSON)
+    numeroIPTU: Mapped[str] = mapped_column(String, unique=True)
     IPTU: Mapped[str] = mapped_column(String)
     qtdParcelasAtrasadasIPTU: Mapped[int] = mapped_column(Integer)
     observacoesIPTU: Mapped[str] = mapped_column(String)
     condominio: Mapped[str] = mapped_column(String)
+    valorCondominio: Mapped[str] = mapped_column(String)
     qtdParcelasAtrasadasCondominio: Mapped[int] = mapped_column(Integer)
     observacoesCondominio: Mapped[str] = mapped_column(String)
     cep: Mapped[str] = mapped_column(String)
@@ -36,8 +38,6 @@ class ImoveisModel:
     referencia: Mapped[str] = mapped_column(String)
     descricao: Mapped[str] = mapped_column(String)
     valorImovel: Mapped[str] = mapped_column(String)
-    condominio: Mapped[str] = mapped_column(String)
-    valorCondominio: Mapped[str] = mapped_column(String)
     garagem: Mapped[str] = mapped_column(String)
     garagemCoberta: Mapped[str] = mapped_column(String, nullable=True)
     garagemTipo: Mapped[str] = mapped_column(String, nullable=True)
@@ -52,8 +52,6 @@ class ImoveisModel:
     sacada: Mapped[str] = mapped_column(JSON)
     quantidadeBanheiros: Mapped[int] = mapped_column(Integer)
     banheiro: Mapped[str] = mapped_column(JSON)
-    quartos: Mapped[str] = mapped_column(JSON)
-    cozinha: Mapped[str] = mapped_column(JSON)
     metrosQuadradoUtil: Mapped[str] = mapped_column(String)
     metrosQuadradoTotal: Mapped[str] = mapped_column(String)
     create_at: Mapped[datetime] = mapped_column(DateTime, init=False, server_default=func.now())
